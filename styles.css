@@ -1,0 +1,20 @@
+html {
+    background-color: rgb(102, 217, 255);
+}
+
+body {
+    display: flex;
+    margin: 30px;
+    background-color: whitesmoke;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0%;
+    padding: 10px;
+}
+
+.content {
+    flex: 5 1 0%;
+}
