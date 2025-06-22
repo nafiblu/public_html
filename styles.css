@@ -35,6 +35,6 @@ body {
 }
 
 body.about .about, body.contact .contact, body.log .log,
-body.personal .personal, body.projects .projects {
+body.home .home, body.projects .projects {
     background-color: white;
 }
