@@ -1,20 +1,40 @@
 html {
-    background-color: rgb(102, 217, 255);
+    background-color: rgb(173, 235, 255);
 }
 
 body {
+    font-family: "Computer Modern Serif", serif;
     display: flex;
     margin: 30px;
-    background-color: whitesmoke;
 }
 
 .sidebar {
     display: flex;
     flex-direction: column;
     flex: 1 1 0%;
+    padding: 0px 0px 0px 10px;
+    text-decoration: none;
+}
+
+.sb-op {
     padding: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    background-color: rgb(191, 191, 191);
+    color: black;
+}
+
+.sb-op a {
+    text-decoration: none;
+    color: black;
 }
 
 .content {
     flex: 5 1 0%;
+    background-color: white;
+}
+
+body.about .about, body.contact .contact, body.log .log,
+body.personal .personal, body.projects .projects {
+    background-color: white;
 }
