@@ -9,7 +9,6 @@ homea.setAttribute("href", "index.html");
 homep.appendChild(homea);
 home.appendChild(homep);
 
-
 const about = document.createElement("div");
 const aboutp = document.createElement("p");
 const abouta = document.createElement("a");
