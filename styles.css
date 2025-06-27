@@ -43,3 +43,8 @@ body.about .about, body.contact .contact, body.log .log,
 body.home .home, body.projects .projects {
     background-color: white;
 }
+
+.project-list {
+    display: flex;
+    flex-direction: column;
+}
