@@ -4,6 +4,9 @@ This will be the code for my [website](https://ifanbaines.com). This is long pro
 
 Todo:
 
-- Find out how to include common HTML code into pages so I don't have copy and paste across files constantly.
+- Create template for items in project list
+- Write about current projects
+- Figure out how to configure make4ht
+- Create satisfying theme/layout
 
 
