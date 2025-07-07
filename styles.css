@@ -1,27 +1,29 @@
 html {
-    background-color: rgb(157, 191, 202);
+    background-color: white;
 }
 
 body {
-    font-family: "Computer Modern Serif", serif;
+    font-family: "Lucida Console", monospace, "Computer Modern Serif", serif;
     display: flex;
-    margin: 30px;
+    flex-direction: column;
+    margin: 50px;
 }
 
 .sidebar {
     display: flex;
-    flex-direction: column;
-    flex: 1 1 0%;
-    padding: 0px 0px 0px 10px;
+    flex-direction: row;
+    /* flex: 1 1 0%; */
+    padding: 0px 0px 0px 0px;
     text-decoration: none;
+    justify-content: center;
 }
 
 .sb-op {
-    padding: 10px;
-    font-size: 25px;
+    padding: 5px;
+    font-size: 20px;
     font-weight: bold;
-    background-color: rgb(191, 191, 191);
-    color: black;
+    /* background-color: rgb(191, 191, 191);*/
+
 }
 
 .sb-op a {
@@ -30,7 +32,7 @@ body {
 }
 
 .content {
-    padding: 0 10px 0 20px;
+    padding: 0px 50px 0px 50px;
     flex: 5 1 0%;
     background-color: white;
 }
@@ -39,9 +41,9 @@ body {
     font-size: 20px;
 }
 
-body.about .about, body.contact .contact, body.log .log,
-body.home .home, body.projects .projects {
-    background-color: white;
+body.about .about a, body.contact .contact a, body.log .log a,
+body.home .home a, body.projects .projects a {
+    color: orangered;
 }
 
 .project-list {

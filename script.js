@@ -13,6 +13,7 @@ const about = document.createElement("div");
 const aboutp = document.createElement("p");
 const abouta = document.createElement("a");
 abouta.textContent = "About";
+aboutp.textContent = "| "
 abouta.setAttribute("href", "about-me.html");
 aboutp.appendChild(abouta);
 about.appendChild(aboutp);
@@ -21,6 +22,7 @@ const projects = document.createElement("div");
 const projectsp = document.createElement("p");
 const projectsa = document.createElement("a");
 projectsa.textContent = "Projects";
+projectsp.textContent = "| "
 projectsa.setAttribute("href", "projects.html");
 projectsp.appendChild(projectsa);
 projects.appendChild(projectsp);
@@ -29,6 +31,7 @@ const log = document.createElement("div");
 const logp = document.createElement("p");
 const loga = document.createElement("a");
 loga.textContent = "Log";
+logp.textContent = "| "
 loga.setAttribute("href", "log.html");
 logp.appendChild(loga);
 log.appendChild(logp);
@@ -37,6 +40,7 @@ const contact = document.createElement("div");
 const contactp = document.createElement("p");
 const contacta = document.createElement("a");
 contacta.textContent = "Contact";
+contactp.textContent = "| ";
 contacta.setAttribute("href", "contact.html");
 contactp.appendChild(contacta);
 contact.appendChild(contactp);
