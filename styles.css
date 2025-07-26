@@ -51,3 +51,8 @@ body.home .home a, body.projects .projects a {
     display: flex;
     flex-direction: column;
 }
+
+a {
+    color: orangered;
+    text-decoration: none;
+}
