@@ -1,0 +1,164 @@
+<!DOCTYPE html> 
+<html lang='en-US' xml:lang='en-US'> 
+<head><title>An algebraic proof of Fermat’s little theorem</title> 
+<meta charset='utf-8' /> 
+
+<script src="../script.js" defer></script>
+<link rel="stylesheet" href="../../styles.css">
+
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link href='algebraic-proof-fermats-little-thm.css' rel='stylesheet' type='text/css' /> 
+<meta content='algebraic-proof-fermats-little-thm.tex' name='src' /> 
+</head><body>
+    <div class="sidebar"></div>
+
+   <p>For a better reading experience, consider viewing the 
+   <a href="algebraic-proof-fermats-little-thm.pdf">PDF</a>.</p>
+   <div class='maketitle'>
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+
+<h2 class='titleHead'>An algebraic proof of Fermat’s little theorem</h2>
+ <div class='author'><span class='cmr-12x-x-120'>Ifan Howells-Baines</span></div><br />
+<div class='date'><span class='cmr-12x-x-120'>January 2025</span></div>
+   </div>
+   <h3 class='likesectionHead' id='introduction'><a id='x1-1000'></a>Introduction</h3>
+<p><a id='x1-1000doc'></a>
+</p><!-- l. 47 --><p class='noindent'>In this short project we will prove Fermat’s little theorem using basic group theory. Only the
+fundamentals of group theory and modular arithmetic are needed to understand this proof. Any
+other ideas, such as Euler’s totient function, are given.
+</p><!-- l. 49 --><p class='noindent'>
+</p>
+   <h3 class='likesectionHead' id='fermats-little-theorem'><a id='x1-2000'></a>Fermat’s little theorem</h3>
+<p><a id='x1-2000doc'></a>
+</p><!-- l. 52 --><p class='noindent'>Juxtaposing the name of the famous theorem by Fermat, the result is the following.
+</p>
+   <div class='newtheorem'>
+<!-- l. 54 --><p class='noindent'><span class='head'>
+<span class='cmbx-12'>Theorem </span>(Fermat’s little theorem)<span class='cmbx-12'>.</span>  </span> <span class='cmti-12'>Let </span><span class='cmmi-12'>p </span><span class='cmti-12'>be a prime number. For any </span><span class='cmmi-12'>a </span><span class='cmsy-10x-x-120'>∈</span><span class='msbm-10x-x-120'>ℤ</span><span class='cmti-12'>,</span>
+</p>
+   <div class='math-display'>
+<img alt='ap ≡ a   (mod  p).
+' class='math-display' src='algebraic-proof-fermats-little-thm0x.png' /></div>
+                                                                                          
+                                                                                          
+   </div>
+<!-- l. 57 --><p class='indent'>
+</p><!-- l. 59 --><p class='indent'>   The original result, which Fermat sent in a letter to his friend in October 1640, is slightly
+different; he only considers the case where <span class='cmmi-12'>a </span>is not divisible by <span class='cmmi-12'>p</span>, and he did not prove his
+assertion in the letter. The first published proof of the general result was written by
+Euler in 1736, though a proof by Leibniz has been dated earlier in some unpublished
+manuscripts.
+</p><!-- l. 61 --><p class='noindent'>
+</p>
+   <h3 class='likesectionHead' id='proof'><a id='x1-3000'></a>Proof</h3>
+<p><a id='x1-3000doc'></a>
+</p><!-- l. 64 --><p class='noindent'>To prove the theorem, we need to know a few results. All of these are common in any
+introductory course in group theory, and are among the first concepts a new student
+learns.
+</p>
+   <div class='newtheorem'>
+<!-- l. 66 --><p class='noindent'><span class='head'>
+<span class='cmbx-12'>Lemma.</span>  </span><span class='cmti-12'>Let </span><span class='cmmi-12'>G </span><span class='cmti-12'>be a finite group with subgroup </span><span class='cmmi-12'>H</span><span class='cmti-12'>, and let </span><span class='cmmi-12'>g </span><span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>G</span><span class='cmti-12'>. Then</span> </p>
+      <ul class='itemize1'>
+      <li class='itemize'><span class='cmti-12'>the order of </span><span class='cmmi-12'>G</span><span class='cmti-12'>, </span><span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>G</span><span class='cmsy-10x-x-120'>|</span><span class='cmti-12'>, divides </span><span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>H</span><span class='cmsy-10x-x-120'>|</span><span class='cmti-12'>;</span>
+      </li>
+      <li class='itemize'><span class='cmmi-12'>g</span><sup><span class='cmsy-8'>|</span><span class='cmmi-8'>G</span><span class='cmsy-8'>|</span></sup> = <span class='cmmi-12'>e</span><span class='cmti-12'>.</span></li></ul>
+   </div>
+<!-- l. 72 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 75 --><p class='indent'>   <span class='head'>
+<span class='cmti-12'>Proof.</span> </span>The first part of this lemma is Lagrange’s theorem, which we will not prove here. The
+second result is true since if <span class='cmmi-12'>k </span>= <img align='middle' alt='||G(g|)|' class='frac' src='algebraic-proof-fermats-little-thm1x.png' />, then <span class='cmmi-12'>g</span><sup><span class='cmsy-8'>|</span><span class='cmmi-8'>G</span><span class='cmsy-8'>|</span></sup> = <span class='cmmi-12'>g</span><sup><span class='cmsy-8'>|</span><span class='cmr-8'>(</span><span class='cmmi-8'>g</span><span class='cmr-8'>)</span><span class='cmsy-8'>|</span><span class='cmmi-8'>k</span></sup> = <span class='cmmi-12'>e</span><sup><span class='cmmi-8'>k</span></sup> = <span class='cmmi-12'>e</span>.<span class='footnote-mark'><a href='algebraic-proof-fermats-little-thm2.html#fn1x0'><sup class='textsuperscript'>∗</sup></a></span><a id='x1-3001f1'></a>  
+                                                                                         □
+                                                                                          
+                                                                                          
+</p>
+   </div>
+<!-- l. 78 --><p class='indent'>   Modular arithmetic is needed to understand the proof, though not anything someone with a
+brief familiarity would not understand. We provide Bézout’s identity as a reminder, but do not
+prove it. We will use this lemma to show that every element in the group we will construct has an
+inverse.
+</p>
+   <div class='newtheorem'>
+<!-- l. 80 --><p class='noindent'><span class='head'>
+<span class='cmbx-12'>Lemma </span>(Bézout’s identity)<span class='cmbx-12'>.</span>  </span><a id='x2-3002xdoc'></a> <span class='cmti-12'>Let </span><span class='cmmi-12'>a </span><span class='cmti-12'>and </span><span class='cmmi-12'>b </span><span class='cmti-12'>be integers, and let </span><span class='cmmi-12'>d </span>= (<span class='cmmi-12'>a,b</span>)<span class='cmti-12'>, the greatest common
+divisor of </span><span class='cmmi-12'>a </span><span class='cmti-12'>and </span><span class='cmmi-12'>b</span><span class='cmti-12'>. Then there exists </span><span class='cmmi-12'>u,v </span><span class='cmsy-10x-x-120'>∈</span><span class='msbm-10x-x-120'>ℤ </span><span class='cmti-12'>such that </span><span class='cmmi-12'>au </span>+ <span class='cmmi-12'>bv </span>= <span class='cmmi-12'>d</span><span class='cmti-12'>.</span>
+</p>
+   </div>
+<!-- l. 83 --><p class='indent'>
+</p><!-- l. 86 --><p class='indent'>   We define a function next, whose purpose is to make notation easier for us later. This function
+is interesting in it’s own right, and readers can learn more about it from it’s  <a href='https://en.wikipedia.org/wiki/Euler%27s_totient_function'>Wikipedia
+page</a>.
+</p>
+   <div class='newtheorem'>
+<!-- l. 88 --><p class='noindent'><span class='head'>
+<span class='cmbx-12'>Definition </span>(Euler’s totient function)<span class='cmbx-12'>.</span>  </span> Let <span class='cmmi-12'>ϕ </span>: <span class='msbm-10x-x-120'>ℤ</span><sup><span class='cmr-8'>+</span></sup> <span class='cmsy-10x-x-120'>→</span><span class='msbm-10x-x-120'>ℤ</span><sup><span class='cmr-8'>+</span></sup> be a function which maps a positive
+integer to the number of positive integers less than or equal to it, which are also relatively
+prime to it. In other words, for any <span class='cmmi-12'>n </span><span class='cmsy-10x-x-120'>∈</span><span class='msbm-10x-x-120'>ℤ</span><sup><span class='cmr-8'>+</span></sup>,
+</p>
+   <div class='math-display'>
+<img alt='n ϕ = |{x ∈ ℤ+ : (n,x) = 1 and x ≤  n}|.
+' class='math-display' src='algebraic-proof-fermats-little-thm2x.png' /></div>
+   </div>
+<!-- l. 91 --><p class='indent'>
+</p><!-- l. 93 --><p class='indent'>   For example, 1<span class='cmmi-12'>ϕ </span>= 1, since it is only relatively prime to itself, and 10<span class='cmmi-12'>ϕ </span>= <span class='cmsy-10x-x-120'>|{</span>1<span class='cmmi-12'>, </span>3<span class='cmmi-12'>, </span>7<span class='cmmi-12'>, </span>9<span class='cmsy-10x-x-120'>}| </span>= 4.
+Notice that if <span class='cmmi-12'>p </span>is prime, then <span class='cmmi-12'>pϕ </span>= <span class='cmmi-12'>p </span><span class='cmsy-10x-x-120'>− </span>1. This number will become the order of the group will be
+interested in.
+</p>
+                                                                                          
+                                                                                          
+   <div class='newtheorem'>
+<!-- l. 95 --><p class='noindent'><span class='head'>
+<span class='cmbx-12'>Lemma.</span>  </span><span class='cmti-12'>Let </span><span class='cmmi-12'>N</span><sub><span class='cmmi-8'>n</span></sub>  =  <span class='cmsy-10x-x-120'>{</span><span class='cmmi-12'>x </span><span class='cmsy-10x-x-120'>∈ </span><span class='msbm-10x-x-120'>ℤ</span><sup><span class='cmr-8'>+</span></sup>  :  (<span class='cmmi-12'>n,x</span>)  =  1 <span class='cmti-12'>and </span><span class='cmmi-12'>x </span><span class='cmsy-10x-x-120'>≤ </span><span class='cmmi-12'>n</span><span class='cmsy-10x-x-120'>}</span><span class='cmti-12'>. This is a group with respect to
+multiplication modulo </span><span class='cmmi-12'>n</span><span class='cmti-12'>.</span>
+</p>
+   </div>
+<!-- l. 97 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 100 --><p class='indent'>   <span class='head'>
+<span class='cmti-12'>Proof.</span> </span>To prove this is a group, we need to show
+      </p><ol class='enumerate1'>
+<li class='enumerate' id='x1-3004x1'><span class='cmmi-12'>N</span><sub><span class='cmmi-8'>n</span></sub> is closed under multiplication modulo <span class='cmmi-12'>n</span>;
+      </li>
+<li class='enumerate' id='x1-3006x2'>there exists an identity element;
+      </li>
+<li class='enumerate' id='x1-3008x3'>multiplication modulo <span class='cmmi-12'>n </span>is associative in <span class='cmmi-12'>N</span><sub><span class='cmmi-8'>n</span></sub>;
+      </li>
+<li class='enumerate' id='x1-3010x4'>there exists an inverse for every element.</li></ol>
+<!-- l. 108 --><p class='indent'>   From now on, we will associate each integer <span class='cmmi-12'>x </span><span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>N</span><sub><span class='cmmi-8'>n</span></sub> with it’s equivalence class [<span class='cmmi-12'>x</span>]. Let
+[<span class='cmmi-12'>x</span><sub><span class='cmr-8'>1</span></sub>]<span class='cmmi-12'>, </span>[<span class='cmmi-12'>x</span><sub><span class='cmr-8'>2</span></sub>] <span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>N</span><sub><span class='cmmi-8'>n</span></sub>, then [<span class='cmmi-12'>x</span><sub><span class='cmr-8'>1</span></sub>][<span class='cmmi-12'>x</span><sub><span class='cmr-8'>2</span></sub>] = [<span class='cmmi-12'>x</span><sub><span class='cmr-8'>1</span></sub><span class='cmmi-12'>x</span><sub><span class='cmr-8'>2</span></sub>]. Since <span class='cmmi-12'>x</span><sub><span class='cmr-8'>1</span></sub> and <span class='cmmi-12'>x</span><sub><span class='cmr-8'>2</span></sub> share no prime factors with <span class='cmmi-12'>n</span>, neither does
+<span class='cmmi-12'>x</span><sub><span class='cmr-8'>1</span></sub><span class='cmmi-12'>x</span><sub><span class='cmr-8'>2</span></sub>, hence [<span class='cmmi-12'>x</span><sub><span class='cmr-8'>1</span></sub><span class='cmmi-12'>x</span><sub><span class='cmr-8'>2</span></sub>] <span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>N</span><sub><span class='cmmi-8'>n</span></sub>. We have proved (<a href='#x1-3004x1'>1<!-- tex4ht:ref: closure  --></a>). For (<a href='#x1-3006x2'>2<!-- tex4ht:ref: identity  --></a>), note that [1] <span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>N</span><sub><span class='cmmi-8'>n</span></sub>, and for any <span class='cmmi-12'>x </span><span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>N</span><sub><span class='cmmi-8'>n</span></sub>,
+[<span class='cmmi-12'>x</span><sub><span class='cmr-8'>1</span></sub>][1] = [1][<span class='cmmi-12'>x</span><sub><span class='cmr-8'>1</span></sub>] = [<span class='cmmi-12'>x</span><sub><span class='cmr-8'>1</span></sub>]. The associativity axiom in (<a href='#x1-3008x3'>3<!-- tex4ht:ref: assoc  --></a>) is inherited from the regular multiplication in
+modular arithmetic.
+                                                                                          
+                                                                                          
+</p><!-- l. 110 --><p class='indent'>   To prove (<a href='#x1-3010x4'>4<!-- tex4ht:ref: inverse  --></a>), we will use Bézout’s identity. Let [<span class='cmmi-12'>x</span>] <span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>N</span><sub><span class='cmmi-8'>n</span></sub>. Then we can find <span class='cmmi-12'>u,v </span><span class='cmsy-10x-x-120'>∈</span><span class='msbm-10x-x-120'>ℤ</span>
+such that <span class='cmmi-12'>xu </span>+ <span class='cmmi-12'>nv </span>= 1, since (<span class='cmmi-12'>x,n</span>) = 1. Rearranging, we get 1 <span class='cmsy-10x-x-120'>− </span><span class='cmmi-12'>xu </span>= <span class='cmmi-12'>nv</span>, which
+implies that <span class='cmmi-12'>xu </span><span class='cmsy-10x-x-120'>≡ </span>1 (mod <span class='cmmi-12'>n</span>). We have shown that there exists an integer <span class='cmmi-12'>u </span>such that
+[<span class='cmmi-12'>x</span>][<span class='cmmi-12'>u</span>] = 1, so to complete the proof, we need to show that <span class='cmmi-12'>u </span>is relatively prime to <span class='cmmi-12'>n</span>.
+If <span class='cmmi-12'>u </span>was not relatively prime to <span class='cmmi-12'>n</span>, then we can find a prime <span class='cmmi-12'>p </span>such that <span class='cmmi-12'>u </span>= <span class='cmmi-12'>pu</span><span class='cmsy-10x-x-120'>′ </span>and
+<span class='cmmi-12'>n </span>= <span class='cmmi-12'>pn</span><span class='cmsy-10x-x-120'>′</span>. Then <span class='cmmi-12'>p</span>(<span class='cmmi-12'>xu</span><span class='cmsy-10x-x-120'>′ </span>+ <span class='cmmi-12'>nv</span><span class='cmsy-10x-x-120'>′</span>) = 1, but as <span class='cmmi-12'>p &gt; </span>1, this is impossible. Therefore (<span class='cmmi-12'>n,u</span>) = 1 and
+[<span class='cmmi-12'>u</span>] <span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>N</span><sub><span class='cmmi-8'>n</span></sub>.<span class='footnote-mark'><a href='algebraic-proof-fermats-little-thm3.html#fn2x0'><sup class='textsuperscript'>†</sup></a></span><a id='x1-3011f2'></a>  
+                                                                                         □
+</p>
+   </div>
+<!-- l. 114 --><p class='indent'>   The proof of Fermat’s little theorem now comes by combining what we have discussed.
+</p>
+   <div class='proof'>
+<!-- l. 116 --><p class='indent'>   <span class='head'>
+<span class='cmti-12'>Proof of Fermat’s little theorem.</span> </span> Let <span class='cmmi-12'>p </span>be a prime. Then <span class='cmmi-12'>N</span><sub><span class='cmmi-8'>p</span></sub> is a group of order <span class='cmmi-12'>pϕ </span>= <span class='cmmi-12'>p</span><span class='cmsy-10x-x-120'>− </span>1.
+For any integer <span class='cmmi-12'>a </span>which is relatively prime to <span class='cmmi-12'>p</span>, [<span class='cmmi-12'>a</span>] <span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>N</span><sub><span class='cmmi-8'>p</span></sub>, and therefore [<span class='cmmi-12'>a</span>]<sup><span class='cmmi-8'>pϕ</span></sup> = [<span class='cmmi-12'>a</span>]<sup><span class='cmmi-8'>p</span><span class='cmsy-8'>−</span><span class='cmr-8'>1</span></sup> = [1].
+This is equivalent to writing <span class='cmmi-12'>a</span><sup><span class='cmmi-8'>p</span><span class='cmsy-8'>−</span><span class='cmr-8'>1</span></sup> <span class='cmsy-10x-x-120'>≡ </span>1 (mod <span class='cmmi-12'>p</span>). Since <span class='cmmi-12'>a </span><span class='cmsy-10x-x-120'>≡ </span><span class='cmmi-12'>a </span>(mod <span class='cmmi-12'>p</span>), we get <span class='cmmi-12'>a</span><sup><span class='cmmi-8'>p</span></sup> <span class='cmsy-10x-x-120'>≡ </span><span class='cmmi-12'>a </span>(mod <span class='cmmi-12'>p</span>).
+Finally, if <span class='cmmi-12'>a </span>is not relatively prime to <span class='cmmi-12'>p</span>, then <span class='cmmi-12'>a </span><span class='cmsy-10x-x-120'>≡ </span>0 (mod <span class='cmmi-12'>p</span>), which means that <span class='cmmi-12'>a</span><sup><span class='cmmi-8'>p</span></sup>  <span class='cmsy-10x-x-120'>≡ </span>0
+(mod <span class='cmmi-12'>p</span>), and combining these gives <span class='cmmi-12'>a</span><sup><span class='cmmi-8'>p</span></sup> <span class='cmsy-10x-x-120'>≡ </span><span class='cmmi-12'>a </span>(mod <span class='cmmi-12'>p</span>).                                                  □
+</p>
+   </div>
+    
+</body> 
+</html>
