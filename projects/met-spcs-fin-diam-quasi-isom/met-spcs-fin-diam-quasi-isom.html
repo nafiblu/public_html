@@ -1,0 +1,161 @@
+<!DOCTYPE html> 
+<html lang='en-US' xml:lang='en-US'> 
+<head><title>All metric spaces of finite diameter are quasi-isometric</title> 
+<meta charset='utf-8' /> 
+
+<script src="../script.js" defer></script>
+<link rel="stylesheet" href="../../styles.css">
+
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link href='met-spcs-fin-diam-quasi-isom.css' rel='stylesheet' type='text/css' /> 
+<meta content='met-spcs-fin-diam-quasi-isom.tex' name='src' /> 
+</head><body>
+      <div class="sidebar"></div>
+
+
+      <p>For a better reading experience, consider viewing the 
+   <a href="met-spcs-fin-diam-quasi-isom.pdf">PDF</a>.</p>
+   <div class='maketitle'>
+
+
+
+<h2 class='titleHead'>All metric spaces of finite diameter are
+quasi-isometric</h2>
+ <div class='author'><span class='cmr-12x-x-120'>Ifan Howells-Baines</span></div><br />
+<div class='date'><span class='cmr-12x-x-120'>October 2024</span></div>
+   </div>
+   <h3 class='sectionHead' id='introduction'><span class='titlemark'>1   </span> <a id='x1-10001'></a>Introduction</h3>
+<!-- l. 25 --><p class='noindent'>This is a short document explaining how all metric spaces of finite diameter are
+quasi-isometric. We will give all the required definitions before proving the result. This
+work is supporting the writing of my project in geometric group theory and is intended to
+cement my understanding of the concepts involved.
+</p><!-- l. 27 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='definitions'><span class='titlemark'>2   </span> <a id='x1-20002'></a>Definitions</h3>
+<!-- l. 30 --><p class='noindent'>In this section we will give the definitions needed to understand the result we are trying
+to prove. A good place for us to start would be with the definition of a metric
+space.
+</p>
+   <div class='newtheorem'>
+<!-- l. 32 --><p class='noindent'><span class='head'>
+<span class='cmbx-12'>Definition </span>(Metric space)<span class='cmbx-12'>.</span>  </span>Let <span class='cmmi-12'>X </span>be a set and <span class='cmmi-12'>d </span>: <span class='cmmi-12'>X </span><span class='cmsy-10x-x-120'>× </span><span class='cmmi-12'>X </span><span class='cmsy-10x-x-120'>→</span><span class='msbm-10x-x-120'>ℝ</span><sub><span class='cmsy-8'>≥</span><span class='cmr-8'>0</span></sub> be a map (called the
+<span class='cmti-12'>metric</span>) with the following properties (for all <span class='cmmi-12'>x,y,z </span><span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>X</span>): </p>
+
+      <ul class='itemize1'>
+      <li class='itemize'><span class='cmmi-12'>d</span>(<span class='cmmi-12'>x,y</span>) = 0 <span class='cmsy-10x-x-120'>⇔ </span><span class='cmmi-12'>x </span>= <span class='cmmi-12'>y</span>;
+      </li>
+      <li class='itemize'><span class='cmmi-12'>d</span>(<span class='cmmi-12'>x,y</span>) = <span class='cmmi-12'>d</span>(<span class='cmmi-12'>y,x</span>) (<span class='cmti-12'>symmetry</span>);
+      </li>
+      <li class='itemize'><span class='cmmi-12'>d</span>(<span class='cmmi-12'>x,y</span>) <span class='cmsy-10x-x-120'>≤ </span><span class='cmmi-12'>d</span>(<span class='cmmi-12'>x,z</span>) + <span class='cmmi-12'>d</span>(<span class='cmmi-12'>z,y</span>) (<span class='cmti-12'>triangle inequality</span>).</li></ul>
+<!-- l. 39 --><p class='noindent'>We say that the pair (<span class='cmmi-12'>X,d</span>) is a <span class='cmti-12'>metric space</span>. For <span class='cmmi-12'>x,y </span><span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>X</span>, we will often call the value <span class='cmmi-12'>d</span>(<span class='cmmi-12'>x,y</span>)
+the <span class='cmti-12'>distance </span>between <span class='cmmi-12'>x </span>and <span class='cmmi-12'>y</span>.
+</p>
+   </div>
+<!-- l. 40 --><p class='indent'>
+</p>
+   <div class='newtheorem'>
+<!-- l. 42 --><p class='noindent'><span class='head'>
+<span class='cmti-12'>Remark.</span>  </span>While  this  definition  of  a  metric  space  might  be  intuitive,  it  is  not
+particularly accurate to the real world. For example, the property that for all <span class='cmmi-12'>x,y </span><span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>X</span>
+that <span class='cmmi-12'>d</span>(<span class='cmmi-12'>x,y</span>) = <span class='cmmi-12'>d</span>(<span class='cmmi-12'>y,x</span>) is not true when driving in a city; one way roads make it so
+the route from point <span class='cmmi-12'>A </span>to <span class='cmmi-12'>B </span>could be different from the route from <span class='cmmi-12'>B </span>to <span class='cmmi-12'>A</span>, and
+hence the distance could also be different. There are variations of metric spaces which
+alter the properties, such as quasimetrics (which omits the symmetric property) and
+semimetrics (which omits the triangle inequality).
+</p>
+   </div>
+<!-- l. 44 --><p class='indent'>
+</p><!-- l. 46 --><p class='indent'>   Next we define what we mean by the <span class='cmti-12'>diameter </span>of a metric space.
+</p>
+   <div class='newtheorem'>
+<!-- l. 48 --><p class='noindent'><span class='head'>
+
+<span class='cmbx-12'>Definition </span>(Diameter)<span class='cmbx-12'>.</span>  </span>Let (<span class='cmmi-12'>X,d</span><sub><span class='cmmi-8'>X</span></sub>) be a metric space. Then we define the <span class='cmti-12'>diameter</span>
+of <span class='cmmi-12'>X </span>to be <span class='cmmi-12'>diam</span>(<span class='cmmi-12'>X</span>) = sup<span class='cmsy-10x-x-120'>{</span><span class='cmmi-12'>d</span><sub><span class='cmmi-8'>X</span></sub>(<span class='cmmi-12'>x,y</span>)<span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>x,y </span><span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>X</span><span class='cmsy-10x-x-120'>}</span>. We say that <span class='cmmi-12'>X </span>has <span class='cmti-12'>finite diameter</span>
+if <span class='cmmi-12'>diam</span>(<span class='cmmi-12'>X</span>) <span class='cmmi-12'>&lt; </span><span class='cmsy-10x-x-120'>∞</span>.
+</p>
+   </div>
+<!-- l. 50 --><p class='indent'>
+</p><!-- l. 52 --><p class='indent'>   There are numerous ways of studying the similarity between metric spaces. One of the
+most strict notions of similarity is that of an <span class='cmti-12'>isometry</span>, where the distance between two
+elements in the domain must be equal to the distance of the images of those two elements
+in the range. We are interested in a more relaxed notion of similarity. Before we define it
+however, we need to understand what it means for two mappings to be a finite distance
+from each other.
+</p>
+   <div class='newtheorem'>
+<!-- l. 54 --><p class='noindent'><span class='head'>
+<span class='cmbx-12'>Definition </span>(Finite distance)<span class='cmbx-12'>.</span>  </span>Let (<span class='cmmi-12'>X,d</span><sub><span class='cmmi-8'>X</span></sub>) and (<span class='cmmi-12'>Y,d</span><sub><span class='cmmi-8'>Y</span> </sub>) be metric spaces and <span class='cmmi-12'>f,f</span><span class='cmsy-10x-x-120'>′ </span>:
+<span class='cmmi-12'>X </span><span class='cmsy-10x-x-120'>→ </span><span class='cmmi-12'>Y </span>be two mappings between them. We say that <span class='cmmi-12'>f </span>is a finite distance from <span class='cmmi-12'>f</span><span class='cmsy-10x-x-120'>′</span>
+if there exists a <span class='cmmi-12'>c </span><span class='cmsy-10x-x-120'>∈</span><span class='msbm-10x-x-120'>ℝ</span><sub><span class='cmsy-8'>≥</span><span class='cmr-8'>0</span></sub> such that for all <span class='cmmi-12'>x </span><span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>X</span>, <span class='cmmi-12'>d</span><sub><span class='cmmi-8'>Y</span> </sub>(<span class='cmmi-12'>xf,xf</span><span class='cmsy-10x-x-120'>′</span>) <span class='cmsy-10x-x-120'>≤ </span><span class='cmmi-12'>c</span>.
+</p>
+   </div>
+<!-- l. 56 --><p class='indent'>
+</p><!-- l. 58 --><p class='indent'>   With this definition, we can now define what a <span class='cmti-12'>quasi-isometry </span>is.
+</p>
+   <div class='newtheorem'>
+<!-- l. 60 --><p class='noindent'><span class='head'>
+<span class='cmbx-12'>Definition </span>(Quasi-isometry)<span class='cmbx-12'>.</span>  </span>Let (<span class='cmmi-12'>X,d</span><sub><span class='cmmi-8'>X</span></sub>) and (<span class='cmmi-12'>Y,d</span><sub><span class='cmmi-8'>Y</span> </sub>) be metric spaces, and <span class='cmmi-12'>f </span>: <span class='cmmi-12'>X </span><span class='cmsy-10x-x-120'>→ </span><span class='cmmi-12'>Y</span>
+be a map. We say that <span class='cmmi-12'>f </span>is a <span class='cmti-12'>quasi-isometry </span>and that <span class='cmmi-12'>X </span>and <span class='cmmi-12'>Y </span>are <span class='cmti-12'>quasi-isometric </span>if
+</p>
+      <ul class='itemize1'>
+      <li class='itemize'>
+      <!-- l. 63 --><p class='noindent'>there exists <span class='cmmi-12'>c,b </span><span class='cmsy-10x-x-120'>∈</span><span class='msbm-10x-x-120'>ℝ</span><sub><span class='cmmi-8'>&gt;</span><span class='cmr-8'>0</span></sub> such that for all <span class='cmmi-12'>x,x</span><span class='cmsy-10x-x-120'>′∈ </span><span class='cmmi-12'>X</span>,
+
+      </p>
+<div class='math-display'>
+<img alt='1
+-dX (x,x′) − b ≤ dY (xf,x ′f) ≤ cdX (x,x′) + b,
+c
+' class='math-display' src='met-spcs-fin-diam-quasi-isom0x.png' /></div>
+      <!-- l. 63 --><p class='noindent'>in other words <span class='cmmi-12'>f </span>is a (<span class='cmmi-12'>c,b</span>)-quasi-isometric embedding;
+      </p></li>
+      <li class='itemize'>there exists a quasi-isometric embedding <span class='cmmi-12'>g </span>: <span class='cmmi-12'>Y  </span><span class='cmsy-10x-x-120'>→ </span><span class='cmmi-12'>X </span>such that <span class='cmmi-12'>fg </span>is a finite
+      distance from id<sub><span class='cmmi-8'>X</span></sub> and <span class='cmmi-12'>gf </span>is a finite distance from id<sub><span class='cmmi-8'>Y</span> </sub>.</li></ul>
+   </div>
+<!-- l. 66 --><p class='indent'>
+</p><!-- l. 68 --><p class='indent'>   We have all the definitions we need to understand the result and can move
+on.
+</p><!-- l. 71 --><p class='noindent'>
+</p>
+   <h3 class='sectionHead' id='the-quasiisometry-of-metric-spaces-with-finite-diameter'><span class='titlemark'>3   </span> <a id='x1-30003'></a>The quasi-isometry of metric spaces with finite diameter</h3>
+<!-- l. 73 --><p class='noindent'>With the definitions under our belt, we can prove the result.
+</p>
+   <div class='newtheorem'>
+<!-- l. 75 --><p class='noindent'><span class='head'>
+<span class='cmbx-12'>Theorem.</span>  </span><span class='cmti-12'>All metric spaces with finite diameter are quasi-isometric.</span>
+</p>
+   </div>
+<!-- l. 77 --><p class='indent'>
+</p>
+
+   <div class='proof'>
+<!-- l. 80 --><p class='indent'>   <span class='head'>
+<span class='cmti-12'>Proof.</span> </span>Let (<span class='cmmi-12'>X,d</span><sub><span class='cmmi-8'>X</span></sub>) and (<span class='cmmi-12'>Y,d</span><sub><span class='cmmi-8'>Y</span> </sub>) be metric spaces with diamaters <span class='cmmi-12'>u,v </span><span class='cmsy-10x-x-120'>∈</span><span class='msbm-10x-x-120'>ℝ </span>respectively,
+and let <span class='cmmi-12'>f </span>: <span class='cmmi-12'>X </span><span class='cmsy-10x-x-120'>→ </span><span class='cmmi-12'>Y </span>be any map<span class='footnote-mark'><a href='met-spcs-fin-diam-quasi-isom2.html#fn1x0'><sup class='textsuperscript'>1</sup></a></span><a id='x1-3001f1'></a> .
+Without loss of generality, suppose <span class='cmmi-12'>u </span><span class='cmsy-10x-x-120'>≤ </span><span class='cmmi-12'>v</span>. Then for any <span class='cmmi-12'>x,x</span><span class='cmsy-10x-x-120'>′∈ </span><span class='cmmi-12'>X</span>,
+</p>
+   <div class='math-display'>
+<img alt='dX(x,x ′) − v ≤ dY (xf, x′f) ≤ dX (x,x′) + v.
+' class='math-display' src='met-spcs-fin-diam-quasi-isom1x.png' /></div>
+<!-- l. 80 --><p class='indent'>   Therefore <span class='cmmi-12'>f </span>is a (1<span class='cmmi-12'>,v</span>)-quasi-isometric embedding.
+</p><!-- l. 82 --><p class='indent'>   Now, let <span class='cmmi-12'>n </span>be a natural number such that <span class='cmmi-12'>nu </span><span class='cmsy-10x-x-120'>≥ </span><span class='cmmi-12'>v </span>(which exists since <span class='msbm-10x-x-120'>ℝ </span>possess
+the Archimidean property) and let <span class='cmmi-12'>g </span>: <span class='cmmi-12'>Y </span><span class='cmsy-10x-x-120'>→ </span><span class='cmmi-12'>X </span>be any map. Then for any <span class='cmmi-12'>y,y</span><span class='cmsy-10x-x-120'>′∈ </span><span class='cmmi-12'>Y </span>,
+</p>
+   <div class='math-display'>
+<img alt='      ′                 ′            ′
+dY(y,y ) − nu ≤ dX (yg,y g) ≤ dY(y, y) + nu.
+' class='math-display' src='met-spcs-fin-diam-quasi-isom2x.png' /></div>
+<!-- l. 82 --><p class='indent'>   Therefore <span class='cmmi-12'>g </span>is a (1<span class='cmmi-12'>,nu</span>)-quasi-isometric embedding.
+</p><!-- l. 84 --><p class='indent'>   Finally, since for any <span class='cmmi-12'>x,x</span><span class='cmsy-10x-x-120'>′∈ </span><span class='cmmi-12'>X </span>and <span class='cmmi-12'>y,y</span><span class='cmsy-10x-x-120'>′∈ </span><span class='cmmi-12'>Y </span>the inequalities <span class='cmmi-12'>d</span><sub><span class='cmmi-8'>X</span></sub>(<span class='cmmi-12'>x,x</span><span class='cmsy-10x-x-120'>′</span>) <span class='cmsy-10x-x-120'>≤ </span><span class='cmmi-12'>u </span>and
+<span class='cmmi-12'>d</span><sub><span class='cmmi-8'>Y</span> </sub>(<span class='cmmi-12'>y,y</span><span class='cmsy-10x-x-120'>′</span>) <span class='cmsy-10x-x-120'>≤ </span><span class='cmmi-12'>v </span>hold, <span class='cmmi-12'>fg </span>is a finite distance from id<sub><span class='cmmi-8'>X</span></sub> and <span class='cmmi-12'>gf </span>is a finite distance from
+id<sub><span class='cmmi-8'>Y</span> </sub>. Therefore, <span class='cmmi-12'>X </span>and <span class='cmmi-12'>Y  </span>are quasi-isometric. Since <span class='cmmi-12'>X </span>and <span class='cmmi-12'>Y  </span>were arbitrary finite
+diameter metric spaces, we’ve shown that all metric spaces with finite diameter are
+
+quasi-isometric.                                                                                        □
+</p>
+   </div>
+    
+</body> 
+</html>

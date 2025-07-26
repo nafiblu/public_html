@@ -1,0 +1,87 @@
+\documentclass[12pt]{article}
+
+\usepackage{geometry}[a4, portrait, margin=2.5cm]
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+\theoremstyle{definition}
+\newtheorem*{definition}{Definition}
+\theoremstyle{theorem}
+\newtheorem*{theorem}{Theorem}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\title{All metric spaces of finite diameter are quasi-isometric}
+\author{Ifan Howells-Baines} 
+\date{October 2024}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+\label{sec:intro}
+
+This is a short document explaining how all metric spaces of finite diameter are quasi-isometric. We will give all the required definitions before proving the result. This work is supporting the writing of my project in geometric group theory and is intended to cement my understanding of the concepts involved.
+
+\section{Definitions}
+\label{sec:definitions}
+
+In this section we will give the definitions needed to understand the result we are trying to prove. A good place for us to start would be with the definition of a metric space.
+
+\begin{definition}[Metric space]
+  Let $X$ be a set and $d:X\times X\to \mathbb{R}_{\geq 0}$ be a map (called the \textit{metric}) with the following properties (for all $x,y,z\in X$):
+  \begin{itemize}
+  \item $d(x,y)=0 \Leftrightarrow x=y$;
+  \item $d(x,y)=d(y,x)$ (\textit{symmetry});
+  \item $d(x,y)\leq d(x,z)+d(z,y)$ (\textit{triangle inequality}).
+  \end{itemize}
+  We say that the pair $(X,d)$ is a \textit{metric space}. For $x,y\in X$, we will often call the value $d(x,y)$ the \textit{distance} between $x$ and $y$.
+\end{definition}
+
+\begin{remark}
+  While this definition of a metric space might be intuitive, it is not particularly accurate to the real world. For example, the property that for all $x,y\in X$ that $d(x,y)=d(y,x)$ is not true when driving in a city; one way roads make it so the route from point $A$ to $B$ could be different from the route from $B$ to $A$, and hence the distance could also be different. There are variations of metric spaces which alter the properties, such as quasimetrics (which omits the symmetric property) and semimetrics (which omits the triangle inequality).
+\end{remark}
+
+Next we define what we mean by the \textit{diameter} of a metric space. 
+
+\begin{definition}[Diameter]
+  Let $(X,d_X)$ be a metric space. Then we define the \textit{diameter} of $X$ to be $diam(X)=\sup\{d_X(x,y)|x,y\in X\}$. We say that $X$ has \textit{finite diameter} if $diam(X)<\infty$.
+\end{definition}
+
+There are numerous ways of studying the similarity between metric spaces. One of the most strict notions of similarity is that of an \textit{isometry}, where the distance between two elements in the domain must be equal to the distance of the images of those two elements in the range. We are interested in a more relaxed notion of similarity. Before we define it however, we need to understand what it means for two mappings to be a finite distance from each other.
+
+\begin{definition}[Finite distance]
+  Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces and $f,f':X\to Y$ be two mappings between them. We say that $f$ is a finite distance from $f'$ if there exists a $c\in \mathbb{R}_{\geq 0}$ such that for all $x\in X$, $d_Y(xf,xf')\leq c$. 
+\end{definition}
+
+With this definition, we can now define what a \textit{quasi-isometry} is.
+
+\begin{definition}[Quasi-isometry]
+  Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces, and $f:X\to Y$ be a map. We say that $f$ is a \textit{quasi-isometry} and that $X$ and $Y$ are \textit{quasi-isometric} if
+  \begin{itemize}
+  \item there exists $c,b\in \mathbb{R}_{>0}$ such that for all $x,x'\in X$, $$\frac{1}{c}d_X(x,x')-b\leq d_Y(xf,x'f)\leq cd_X(x,x')+b,$$ in other words $f$ is a $(c,b)$-quasi-isometric embedding;
+    \item there exists a quasi-isometric embedding $g:Y\to X$ such that $fg$ is a finite distance from $\textrm{id}_X$ and $gf$ is a finite distance from $\textrm{id}_Y$.
+  \end{itemize}
+\end{definition}
+
+We have all the definitions we need to understand the result and can move on.
+
+
+\section{The quasi-isometry of metric spaces with finite diameter}
+
+With the definitions under our belt, we can prove the result.
+
+\begin{theorem}
+  All metric spaces with finite diameter are quasi-isometric.
+\end{theorem}
+
+\begin{proof}
+  Let $(X,d_X)$ and $(Y,d_Y)$ be metric spaces with diamaters $u,v\in\mathbb{R}$ respectively, and let $f:X\to Y$ be any map\footnote{We are relying on the axiom of choice here.}. Without loss of generality, suppose $u\leq v$. Then for any $x,x'\in X$, $$d_X(x,x')-v\leq d_Y(xf,x'f) \leq d_X(x,x')+v.$$ Therefore $f$ is a $(1,v)$-quasi-isometric embedding.
+  
+  Now, let $n$ be a natural number such that $nu\geq v$ (which exists since $\mathbb{R}$ possess the Archimidean property) and let $g:Y\to X$ be any map. Then for any $y,y'\in Y$, $$d_Y(y,y')-nu\leq d_X(yg,y'g)\leq d_Y(y,y')+nu.$$ Therefore $g$ is a $(1,nu)$-quasi-isometric embedding.
+  
+  Finally, since for any $x,x'\in X$ and $y,y'\in Y$ the inequalities $d_X(x,x')\leq u$ and $d_Y(y,y')\leq v$ hold, $fg$ is a finite distance from $\textrm{id}_X$ and $gf$ is a finite distance from $\textrm{id}_Y$. Therefore, $X$ and $Y$ are quasi-isometric. Since $X$ and $Y$ were arbitrary finite diameter metric spaces, we've shown that all metric spaces with finite diameter are quasi-isometric.
+\end{proof}
+
+\end{document}
