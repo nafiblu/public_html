@@ -1,0 +1,163 @@
+<!DOCTYPE html> 
+<html lang='en-US' xml:lang='en-US'> 
+<head><title>The equivalence between the isomorphism between two objects, the isomorphism of the
+pushforward, and the isomorphism of the pushback</title> 
+<meta charset='utf-8' /> 
+
+<script src="../script.js" defer></script>
+<link rel="stylesheet" href="../../styles.css">
+
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link href='ct-isom-pushfor-pushback.css' rel='stylesheet' type='text/css' /> 
+<meta content='ct-isom-pushfor-pushback.tex' name='src' /> 
+</head><body>
+
+    <div class="sidebar"></div>
+
+   <p>For a better reading experience, consider viewing the 
+   <a href="ct-isom-pushfor-pushback.pdf">PDF</a>.</p>
+
+   <div class='maketitle'>
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+
+<h2 class='titleHead'>The equivalence between the isomorphism between two
+objects, the isomorphism of the pushforward, and the
+isomorphism of the pushback</h2>
+ <div class='author'><span class='cmr-12x-x-120'>Ifan Howells-Baines</span></div><br />
+<div class='date'><span class='cmr-12x-x-120'>July 2025</span></div>
+   </div>
+<!-- l. 21 --><p class='indent'>   This short project is dedicated to proving an important theorem. In summary, it states
+that we can learn a lot about an object <span class='cmmi-12'>X </span>by considering it’s relationships to other
+objects.
+</p><!-- l. 23 --><p class='indent'>   In this document we will denote the morphisms between objects <span class='cmmi-12'>X </span>and <span class='cmmi-12'>Y </span>in a category <span class='cmmi-12'>C </span>by
+<span class='cmmi-12'>C</span>(<span class='cmmi-12'>X,Y </span>). It is often written as Hom<sub><span class='cmmi-8'>C</span></sub>(<span class='cmmi-12'>X,Y </span>) or Hom(<span class='cmmi-12'>X,Y </span>) if the category is clear from context. We
+will write maps on the right.
+</p>
+   <div class='newtheorem'>
+<!-- l. 25 --><p class='noindent'><span class='head'>
+<span class='cmbx-12'>Theorem.</span>  </span><span class='cmti-12'>Let </span><span class='cmmi-12'>X </span><span class='cmti-12'>and </span><span class='cmmi-12'>Y </span><span class='cmti-12'>be objects from a category </span><span class='cmmi-12'>C</span><span class='cmti-12'>. Then the following are equivalent:</span>
+      </p><ol class='enumerate1'>
+<li class='enumerate' id='x1-3x1'><span class='cmti-12'>The morphism </span><span class='cmmi-12'>f </span>: <span class='cmmi-12'>X </span><span class='cmsy-10x-x-120'>→ </span><span class='cmmi-12'>Y </span><span class='cmti-12'>is an isomorphism;</span>
+      </li>
+<li class='enumerate' id='x1-5x2'><span class='cmti-12'>For any object </span><span class='cmmi-12'>Z</span><span class='cmti-12'>, the pushforward </span><span class='cmmi-12'>f</span><sub><span class='cmmi-8'>⋆</span></sub>  : <span class='cmmi-12'>C</span>(<span class='cmmi-12'>Z,X</span>) <span class='cmsy-10x-x-120'>→ </span><span class='cmmi-12'>C</span>(<span class='cmmi-12'>Z,Y </span>) <span class='cmti-12'>is an isomorphism (of
+      sets);</span>
+      </li>
+<li class='enumerate' id='x1-7x3'><span class='cmti-12'>For any object </span><span class='cmmi-12'>Z</span><span class='cmti-12'>, the pullback </span><span class='cmmi-12'>f</span><sup><span class='cmmi-8'>⋆</span></sup> : <span class='cmmi-12'>C</span>(<span class='cmmi-12'>Y,Z</span>) <span class='cmsy-10x-x-120'>→ </span><span class='cmmi-12'>C</span>(<span class='cmmi-12'>X,Z</span>) <span class='cmti-12'>is an isomorphism (of sets).</span></li></ol>
+                                                                                          
+                                                                                          
+   </div>
+<!-- l. 32 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 35 --><p class='indent'>   <span class='head'>
+<span class='cmti-12'>Proof.</span> </span>We will prove 1 <span class='cmsy-10x-x-120'>⇔ </span>3, then 1 <span class='cmsy-10x-x-120'>⇔ </span>2, and finally 2 <span class='cmsy-10x-x-120'>⇒ </span>3. For convenience, we have included
+relevant commutative diagrams in Figure 1.
+</p><!-- l. 37 --><p class='indent'>   (1 <span class='cmsy-10x-x-120'>⇔ </span>3) First, assume that <span class='cmmi-12'>f </span>is an isomorphism. In other words, the inverse <span class='cmmi-12'>f</span><sup><span class='cmsy-8'>−</span><span class='cmr-8'>1</span></sup> : <span class='cmmi-12'>Y </span><span class='cmsy-10x-x-120'>→ </span><span class='cmmi-12'>X</span>
+exists. We want to show that the pullback <span class='cmmi-12'>f</span><sup><span class='cmmi-8'>⋆</span></sup> is an isomorphism of sets. We will do this by
+constructing a map and showing it is the inverse of <span class='cmmi-12'>f</span><sup><span class='cmmi-8'>⋆</span></sup>. Consider (<span class='cmmi-12'>f</span><sup><span class='cmsy-8'>−</span><span class='cmr-8'>1</span></sup>)<sup><span class='cmmi-8'>⋆</span></sup>, the pullback of <span class='cmmi-12'>f</span><sup><span class='cmsy-8'>−</span><span class='cmr-8'>1</span></sup>.
+Let <span class='cmmi-12'>g</span><sub><span class='cmr-8'>1</span></sub> <span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>C</span>(<span class='cmmi-12'>Y,Z</span>). Then
+</p>
+   <div class='math-display'>
+<img alt='g1f⋆(f− 1)⋆ = f −1fg1 = g1.
+' class='math-display' src='ct-isom-pushfor-pushback0x.svg' /></div>
+<!-- l. 37 --><p class='indent'>   Similarily, let <span class='cmmi-12'>g</span><sub><span class='cmr-8'>2</span></sub> <span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>C</span>(<span class='cmmi-12'>X,Z</span>). Then
+</p>
+   <div class='math-display'>
+<img alt='    −1 ⋆ ⋆      −1
+g2(f  ) f  = f f  g2 = g2.
+' class='math-display' src='ct-isom-pushfor-pushback1x.svg' /></div>
+<!-- l. 37 --><p class='indent'>   Hence (<span class='cmmi-12'>f</span><sup><span class='cmsy-8'>−</span><span class='cmr-8'>1</span></sup>)<sup><span class='cmmi-8'>⋆</span></sup> = (<span class='cmmi-12'>f</span><sup><span class='cmmi-8'>⋆</span></sup>)<sup><span class='cmsy-8'>−</span><span class='cmr-8'>1</span></sup>, and <span class='cmmi-12'>f</span><sup><span class='cmmi-8'>⋆</span></sup> is an isomorphism.
+</p><!-- l. 39 --><p class='indent'>   Next,  assume  that  <span class='cmmi-12'>f</span><sup><span class='cmmi-8'>⋆</span></sup>  is  an  isomorphism  for  all  <span class='cmmi-12'>Z</span>.  We  want  to  show  that  <span class='cmmi-12'>f  </span>is  an
+isomorphism. Take <span class='cmmi-12'>Z </span>= <span class='cmmi-12'>X</span>, so the pullback is a map between <span class='cmmi-12'>C</span>(<span class='cmmi-12'>Y,X</span>) and <span class='cmmi-12'>C</span>(<span class='cmmi-12'>X,X</span>). Since <span class='cmmi-12'>f</span>
+is surjective, we can find a <span class='cmmi-12'>h </span><span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>C</span>(<span class='cmmi-12'>Y,X</span>) such that <span class='cmmi-12'>hf</span><sup><span class='cmmi-8'>⋆</span></sup> = <span class='cmmi-12'>fh </span>= id<sub>
+<span class='cmmi-8'>X</span></sub>. This seems like a good
+candidate for our inverse for <span class='cmmi-12'>f</span>.
+</p><!-- l. 41 --><p class='indent'>   Now consider <span class='cmmi-12'>Z </span>= <span class='cmmi-12'>Y </span>, so the pullback is a map between <span class='cmmi-12'>C</span>(<span class='cmmi-12'>Y,Y </span>) and <span class='cmmi-12'>C</span>(<span class='cmmi-12'>X,Y </span>). Since
+                                                                                          
+                                                                                          
+</p>
+   <div class='math-display'>
+<img alt='id f ⋆ = fid  = f
+  Y         Y
+' class='math-display' src='ct-isom-pushfor-pushback2x.svg' /></div>
+<!-- l. 41 --><p class='indent'>   and
+</p>
+   <div class='math-display'>
+<img alt='      ⋆
+(hf )f  = f(hf ) = (fh)f =  idX f = f,
+' class='math-display' src='ct-isom-pushfor-pushback3x.svg' /></div>
+<!-- l. 41 --><p class='indent'>   we can deduce that <span class='cmmi-12'>hf </span>= id<sub><span class='cmmi-8'>Y</span> </sub> as <span class='cmmi-12'>f</span><sup><span class='cmmi-8'>⋆</span></sup> is injective. Therefore <span class='cmmi-12'>h </span>is an inverse for <span class='cmmi-12'>f</span>, and <span class='cmmi-12'>f </span>is
+an isomorphism.
+</p><!-- l. 43 --><p class='indent'>   (1 <span class='cmsy-10x-x-120'>⇔ </span>2) The reasoning to this is very similar to above, so we omit it.
+</p><!-- l. 45 --><p class='indent'>   (2 <span class='cmsy-10x-x-120'>⇒ </span>3) Assume <span class='cmmi-12'>f</span><sub><span class='cmmi-8'>⋆</span></sub> is an isomorphism. From above, we know that <span class='cmmi-12'>f </span>is an isomorphism,
+so <span class='cmmi-12'>f</span><sup><span class='cmsy-8'>−</span><span class='cmr-8'>1</span></sup> exists. Consider the pullback (<span class='cmmi-12'>f</span><sup><span class='cmsy-8'>−</span><span class='cmr-8'>1</span></sup>)<sup><span class='cmmi-8'>⋆</span></sup> : <span class='cmmi-12'>C</span>(<span class='cmmi-12'>X,Z</span>) <span class='cmsy-10x-x-120'>→ </span><span class='cmmi-12'>C</span>(<span class='cmmi-12'>Y,Z</span>). Let <span class='cmmi-12'>g</span><sub>
+<span class='cmr-8'>1</span></sub> <span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>C</span>(<span class='cmmi-12'>Y,Z</span>). Then
+</p>
+   <div class='math-display'>
+<img alt='    ⋆  −1 ⋆       − 1
+g1f  (f   ) =  g1ff   =  g.
+' class='math-display' src='ct-isom-pushfor-pushback4x.svg' /></div>
+<!-- l. 45 --><p class='indent'>   Similarily, let <span class='cmmi-12'>g</span><sub><span class='cmr-8'>2</span></sub> <span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>C</span>(<span class='cmmi-12'>X,Z</span>). Then
+</p>
+                                                                                          
+                                                                                          
+   <div class='math-display'>
+<img alt='     −1 ⋆ ⋆      −1
+g2(f   )f  =  g2f  f =  g.
+' class='math-display' src='ct-isom-pushfor-pushback5x.svg' /></div>
+<!-- l. 45 --><p class='indent'>   As <span class='cmmi-12'>g</span><sub><span class='cmr-8'>1</span></sub> and <span class='cmmi-12'>g</span><sub><span class='cmr-8'>2</span></sub> were arbitary, we have shown that (<span class='cmmi-12'>f</span><sup><span class='cmsy-8'>−</span><span class='cmr-8'>1</span></sup>)<sup><span class='cmmi-8'>⋆</span></sup> = (<span class='cmmi-12'>f</span><sup><span class='cmmi-8'>⋆</span></sup>)<sup><span class='cmsy-8'>−</span><span class='cmr-8'>1</span></sup>, and therefore <span class='cmmi-12'>f</span><sup><span class='cmmi-8'>⋆</span></sup> is an
+isomorphism.
+                                                                                         □
+</p>
+   </div>
+   <figure class='figure' id='-commutative-diagrams-of-pushforwards-and-pullbacks'> 
+
+                                                                                          
+                                                                                          
+                                                                                          
+                                                                                          
+<div class='subfigure'>
+<!-- l. 52 --><p class='noindent'></p><!-- l. 54 --><p class='noindent'><img alt='  X         Y
+
+
+
+fgg11Zf⋆:=g1f' src='ct-isom-pushfor-pushback6x.svg' /><a id='x1-8r1'></a>
+</p>
+<div class='caption'><span class='id'><span class='cmr-10x-x-109'>(a) </span></span><span class='content'><span class='cmr-10x-x-109'>The pushforward </span><span class='cmmi-10x-x-109'>f</span><sub><span class='cmmi-8'>⋆</span></sub><span class='cmr-10x-x-109'>.</span>
+</span></div>                                    </div> <div class='subfigure'>
+<!-- l. 60 --><p class='noindent'></p><!-- l. 62 --><p class='noindent'><img alt='  X        Y
+
+
+fg2g2f∗:=fg2    Z' src='ct-isom-pushfor-pushback7x.svg' /><a id='x1-9r2'></a>
+</p>
+<div class='caption'><span class='id'><span class='cmr-10x-x-109'>(b) </span></span><span class='content'><span class='cmr-10x-x-109'>The pullback </span><span class='cmmi-10x-x-109'>f</span><sup><span class='cmmi-8'>⋆</span></sup><span class='cmr-10x-x-109'>.</span>
+</span></div>                                    </div>
+<div class='subfigure'>
+<!-- l. 69 --><p class='noindent'></p><!-- l. 71 --><p class='noindent'><img alt='  X        Y
+
+
+ −1−1 :   −1
+fg3g3(f  )⋆ =g3f Z' src='ct-isom-pushfor-pushback8x.svg' /><a id='x1-10r3'></a>
+</p>
+<div class='caption'><span class='id'><span class='cmr-10x-x-109'>(c) </span></span><span class='content'><span class='cmr-10x-x-109'>The pushforward (</span><span class='cmmi-10x-x-109'>f</span><sup><span class='cmsy-8'>−</span><span class='cmr-8'>1</span></sup><span class='cmr-10x-x-109'>)</span><sub><span class='cmmi-8'>⋆</span></sub><span class='cmr-10x-x-109'>.</span>
+</span></div>                                    </div> <div class='subfigure'>
+<!-- l. 77 --><p class='noindent'></p><!-- l. 79 --><p class='noindent'><img alt='  X         Y
+
+
+gfg−Z1(f−1)⋆:=f− 1g
+ 44          4   ' src='ct-isom-pushfor-pushback9x.svg' />  <a id='x1-11r4'></a>
+</p>
+<div class='caption'><span class='id'><span class='cmr-10x-x-109'>(d) </span></span><span class='content'><span class='cmr-10x-x-109'>The pullback (</span><span class='cmmi-10x-x-109'>f</span><sup><span class='cmsy-8'>−</span><span class='cmr-8'>1</span></sup><span class='cmr-10x-x-109'>)</span><sup><span class='cmmi-8'>⋆</span></sup><span class='cmr-10x-x-109'>.</span>
+</span></div>                                    </div> <a id='x1-11rdoc'></a><a id='x1-12r1'></a>
+<div class='caption'><span class='id'>Figure 1: </span><span class='content'>Commutative diagrams of pushforwards and pullbacks.
+</span></div>
+                                                                                          
+                                                                                          
+   </figure>
+    
+</body> 
+</html>

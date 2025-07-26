@@ -1,0 +1,90 @@
+\documentclass[12pt]{article}
+
+\usepackage[portrait, margin=2.5cm]{geometry}
+\usepackage{amsthm, amsfonts, amssymb, amsmath}
+\usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{mathtools}
+
+\theoremstyle{theorem}
+\newtheorem*{theorem}{Theorem}
+
+\title{The equivalence between the isomorphism between two objects, the isomorphism of the pushforward, and the isomorphism of the pushback}
+\author{Ifan Howells-Baines}
+\date{July 2025}
+
+\begin{document}
+\maketitle
+
+This short project is dedicated to proving an important theorem. In summary, it states that we can learn a lot about an object $X$ by considering it's relationships to other objects.
+
+In this document we will denote the morphisms between objects $X$ and $Y$ in a category $C$ by $C(X,Y)$. It is often written as $\textrm{Hom}_C(X,Y)$ or $\textrm{Hom}(X,Y)$ if the category is clear from context. We will write maps on the right.
+
+\begin{theorem}
+  Let $X$ and $Y$ be objects from a category $C$. Then the following are equivalent:
+  \begin{enumerate}
+  \item The morphism $f:X\to Y$ is an isomorphism;
+  \item For any object $Z$, the pushforward $f_\star :C(Z,X)\to C(Z,Y)$ is an isomorphism (of sets);
+  \item For any object $Z$, the pullback $f^\star :C(Y,Z)\to C(X,Z)$ is an isomorphism (of sets).
+  \end{enumerate}
+\end{theorem}
+
+\begin{proof}
+  We will prove $1 \Leftrightarrow 3$, then $1 \Leftrightarrow 2$, and finally $2\Rightarrow 3$. For convenience, we have included relevant commutative diagrams in Figure 1.
+
+  ($1\Leftrightarrow 3$) First, assume that $f$ is an isomorphism. In other words, the inverse $f^{-1}:Y\to X$ exists. We want to show that the pullback $f^\star$ is an isomorphism of sets. We will do this by constructing a map and showing it is the inverse of $f^\star$. Consider $(f^{-1})^\star$, the pullback of $f^{-1}$. Let $g_1\in C(Y,Z)$. Then $$g_1f^\star(f^{-1})^\star=f^{-1}fg_1=g_1.$$ Similarily, let $g_2\in C(X,Z)$. Then $$g_2(f^{-1})^\star f^\star=ff^{-1}g_2=g_2.$$ Hence $(f^{-1})^\star=(f^\star)^{-1}$, and $f^\star$ is an isomorphism.
+
+  Next, assume that $f^\star$ is an isomorphism for all $Z$. We want to show that $f$ is an isomorphism. Take $Z=X$, so the pullback is a map between $C(Y,X)$ and $C(X,X)$. Since $f$ is surjective, we can find a $h\in C(Y,X)$ such that $hf^\star = fh = \textrm{id}_X$. This seems like a good candidate for our inverse for $f$.
+  
+  Now consider $Z=Y$, so the pullback is a map between $C(Y,Y)$ and $C(X,Y)$. Since $$\textrm{id}_Yf^\star = f\textrm{id}_Y =f$$ and $$(hf)f^\star =f(hf)=(fh)f=\textrm{id}_X f = f,$$ we can deduce that $hf=\textrm{id}_Y$ as $f^\star$ is injective. Therefore $h$ is an inverse for $f$, and $f$ is an isomorphism.
+
+  ($1\Leftrightarrow 2$) The reasoning to this is very similar to above, so we omit it.
+  
+  ($2\Rightarrow 3$) Assume $f_\star$ is an isomorphism. From above, we know that $f$ is an isomorphism, so $f^{-1}$ exists. Consider the pullback $(f^{-1})^\star:C(X,Z)\to C(Y,Z)$. Let $g_1\in C(Y,Z)$. Then $$g_1f^\star(f^{-1})^\star=g_1ff^{-1}=g.$$ Similarily, let $g_2\in C(X,Z)$. Then $$g_2(f^{-1})^\star f^\star = g_2f^{-1}f = g.$$ As $g_1$ and $g_2$ were arbitary, we have shown that $(f^{-1})^\star =(f^\star)^{-1}$, and therefore $f^\star$ is an isomorphism.
+
+\end{proof}
+
+\begin{figure}[h]
+  \centering
+  
+  \begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \begin{tikzcd}
+      X \arrow[r, "f"]                                    & Y \\
+      Z \arrow[ru, "g_1f_\star\coloneq g_1f"', dashed] \arrow[u, "g_1"] &  
+    \end{tikzcd}
+    \caption{The pushforward $f_{\star}$.}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \begin{tikzcd}
+      X \arrow[r, "f"] \arrow[rd, "g_2f_*\coloneq fg_2"', dashed] & Y \arrow[d, "g_2"] \\
+      & Z                 
+    \end{tikzcd}
+    \caption{The pullback $f^\star$.}
+  \end{subfigure}
+  \par\bigskip
+  \begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \begin{tikzcd}
+      X & Y \arrow[l, "f^{-1}"']                                \\
+      & Z \arrow[u, "g_3"'] \arrow[lu, "g_3(f^{-1})_\star\coloneq g_3f^{-1}", dashed]
+    \end{tikzcd}
+    \caption{The pushforward $(f^{-1})_\star$.}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.4\textwidth}
+    \centering
+    \begin{tikzcd}
+      X \arrow[d, "g_4"'] & Y \arrow[l, "f^{-1}"'] \arrow[ld, "g_4(f^{-1})^{\star}\coloneq f^{-1}g_4", dashed] \\
+      Z                   &                                                            
+    \end{tikzcd}
+    \caption{The pullback $(f^{-1})^\star$.}
+  \end{subfigure}
+  \label{fig:com-diag}
+  \caption{Commutative diagrams of pushforwards and pullbacks.}
+  
+\end{figure}
+
+\end{document}
