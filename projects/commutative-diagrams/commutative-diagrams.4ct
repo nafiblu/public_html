@@ -1,0 +1,11 @@
+\expandafter\ifx\csname doTocEntry\endcsname\relax \expandafter\endinput\fi 
+\doTocEntry\tocsection{1}{\csname a:TocLink\endcsname{1}{x1-10001}{QQ2-1-1}{Introduction}}{3}\relax 
+\doTocEntry\tocsection{2}{\csname a:TocLink\endcsname{1}{x1-20002}{QQ2-1-2}{Preliminaries}}{3}\relax 
+\doTocEntry\toclof{1}{\csname a:TocLink\endcsname{1}{x1-20021}{}{\ignorespaces Example of a directed graph}}{figure}\relax 
+\doTocEntry\toclof{2}{\csname a:TocLink\endcsname{1}{x1-20042}{}{\ignorespaces The path $(c,d,b,e,a)$.}}{figure}\relax 
+\doTocEntry\toclof{3}{\csname a:TocLink\endcsname{1}{x1-20063}{}{\ignorespaces An edge-labelling of a directed graph.}}{figure}\relax 
+\doTocEntry\tocsection{3}{\csname a:TocLink\endcsname{1}{x1-30003}{QQ2-1-6}{Commutative diagrams}}{13}\relax 
+\doTocEntry\toclof{4}{\csname a:TocLink\endcsname{1}{x1-30024}{}{\ignorespaces An example of a diagram.}}{figure}\relax 
+\doTocEntry\toclof{5}{\csname a:TocLink\endcsname{1}{x1-30045}{}{\ignorespaces A commutative diagram.}}{figure}\relax 
+\doTocEntry\tocsection{4}{\csname a:TocLink\endcsname{1}{x1-40004}{QQ2-1-9}{A brief diversion to Category Theory}}{21}\relax 
+\par 

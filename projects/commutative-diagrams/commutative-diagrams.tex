@@ -1,0 +1,196 @@
+\documentclass[12pt]{article}
+\usepackage{geometry}[a4, portrait, margin=2.5cm]
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{tikzit}
+\input{sample.tikzstyles}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+
+\title{An explanation of Commutative Diagrams}
+\author{Ifan Howells-Baines}
+\date{August 2024}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+\label{sec:intro}
+
+In this project, we will give a more rigirous definition of a commutative diagram than I could find online. We start off with elementary graph theory definitions to define what we will call a \textit{diagram}, which we will then use to define the \textit{commutative diagram} as well as different edge notations. To finish, we use the definition of a free group to give an example of a commutative diagram before giving a very brief word on category theory. Throughout there are diagrams to help the reader understand.
+
+\section{Preliminaries}
+\label{sec:prelim}
+
+To give a formal explanation of commutative diagrams, we first have to understand some graph theory. Definitions \ref{def:dir-graph}, \ref{def:path}, and \ref{def:lab-graph} are standard and are provided to clarify notation.
+
+\begin{definition}[Directed graph]
+  \label{def:dir-graph}
+  Let $V$ be a set and $E$ be a subset of the set of all possible ordered pairs of $V$. A \textit{directed graph} is the tuple $G=(V,E)$. We will call elements from $V$ \textit{vertices} and elements from $E$ \textit{edges}.
+\end{definition}
+
+\begin{remark}
+  A directed graph is a graph where the edges are ordered pairs instead of unordered pairs.
+\end{remark}
+
+When drawing directed graphs, the edges between vertices are denoted by arrows pointing from the first coordinate to the second. For example, the directed graph $(\{a,b,c,d\},\{(a,b),(c,d),(d,c),(d,b)\})$ is shown in Figure \ref{fig:dir-graph}.
+
+\begin{figure}[h]
+  \centering
+  \ctikzfig{dir-graph}
+  \caption{Example of a directed graph}
+  \label{fig:dir-graph}
+\end{figure}
+
+\begin{definition}[Path]
+  \label{def:path}
+  Let $G=(V,E)$ be a directed graph. A (finite) \textit{path} in $G$ is a sequence $(v_n)_{n=1}^k$ of vertices ($k\in\mathbb{N}$) such that $(v_i,v_{i+1})\in E$ ($1\leq i<k$) and $v_i \neq v_j$ ($1\leq i,j \leq k, i\neq j$). Infinite paths are defined analagously.
+\end{definition}
+
+The term path can be in reference to a finite or an infinite path. An example of a path in a directed graph is shown in Figure \ref{fig:dir-graph-path}.
+
+\begin{figure}[h]
+  \centering
+  \ctikzfig{dir-graph-path}
+  \caption{The path $(c,d,b,e,a)$.}
+  \label{fig:dir-graph-path}
+\end{figure}
+
+\begin{definition}[Labelled graph]
+  \label{def:lab-graph}
+  Let $G=(V,E)$ be a graph and $L$ be a set. A \textit{edge-labelling} of $G$ is a map $f:E\to L$.
+\end{definition}
+
+Graph labellings are presented on pictures of graphs by noting the image of an edge next to the edge, as in Figure \ref{fig:graph-label} where the graph has been labelled with $\{1,2,3,4,5,6\}$. Now that we have all the standard graph theory definitions we need, we can define a diagram. This is the bridge between graph theory and the representation of mappings as edges which we will use to define commutative diagrams.
+
+\begin{figure}[h]
+  \centering
+  \ctikzfig{graph-label}
+  \caption{An edge-labelling of a directed graph.}
+  \label{fig:graph-label}
+\end{figure}
+
+\section{Commutative diagrams}
+\label{sec:com-diag}
+
+The following is the definition of a diagram, which the definition of a commutative diagram will follow straight after.
+
+\begin{definition}[Diagram]
+  \label{def:diag}
+  Let $L$ be a set of mappings and $V$ a family (set of sets). A \textit{diagram} is a directed graph $(V,E)$ with edge-labelling $f:E\to L$ such that if $(v_1,v_2)\in E$ then the domain and range of $(v_1,v_2)f$ are $v_1$ and $v_2$ respectively.
+\end{definition}
+
+In essence, a diagram is an edge-labelled directed graph where the vertices are sets and the edges are mappings from the first coordinate of the edge to the second. Figure \ref{fig:diag} is an example of a diagram. Note that in the diagram, $f_1 \neq f_2f_3$, despite what the arrows may suggest; this is what makes the diagram non-commutative. Now, as promised:
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+	\begin{pgfonlayer}{nodelayer}
+		\node [style=dot] (0) at (-11.5, 3.5) {$\mathbb{Z}$};
+		\node [style=dot] (1) at (-5.5, 3.5) {$\mathbb{Q}$};
+		\node [style=dot] (2) at (-5.5, -1.5) {$\mathbb{C}$};
+		\node [style=dot] (3) at (-11.5, -1.5) {$\mathbb{N}$};
+		\node [style=dot] (4) at (-8.5, 6.5) {$\mathbb{R}$};
+		\node [style=none] (5) at (-8.5, 4) {$xf_1=\frac{x}{2}$};
+		\node [style=none] (6) at (-11, 5.25) {$xf_2=x$};
+		\node [style=none] (7) at (-6.25, 5.25) {$xf_3=0$};
+		\node [style=none] (8) at (-9.5, 1.25) {$xf_4=\frac{x}{5}$};
+		\node [style=none] (9) at (-8.5, -1) {$xf_5=3$};
+		\node [style=none] (10) at (-8.5, -4) {$xf_6=a$};
+	\end{pgfonlayer}
+	\begin{pgfonlayer}{edgelayer}
+		\draw [style=arrow, in=-120, out=-60, looseness=1.25] (3) to (2);
+		\draw [style=arrow] (3) to (1);
+		\draw [style=arrow2, in=180, out=0, looseness=0.75] (3) to (2);
+		\draw [style=arrow] (0) to (1);
+		\draw [style=arrow2, in=315, out=135] (1) to (4);
+		\draw [style=arrow2] (4) to (0);
+	\end{pgfonlayer}
+\end{tikzpicture}
+
+  \caption{An example of a diagram.}
+  \label{fig:diag}
+\end{figure}
+
+\begin{definition}[Commutative diagram]
+  \label{def:com-diag}
+  Let $G=(V,E)$ be a diagram with edge-labelling $f$. We call $G$ a \textit{commutative diagram} if for any vertices $v_1,v_2\in V$ and any two paths $(v_1,x_1,x_2,\ldots,x_n,v_2)$ and $(v_1,y_1,y_2,\ldots,y_k,v_2)$ ($n,k\in \mathbb{N}$) then $$((v_1,x_1)f)((x_1,x_2)f)\ldots((x_n,v_2)f) = ((v_1,y_1)f)((y_1,y_2)f)\ldots((y_k,v_2)f).$$ (This is a composition of functions.)
+\end{definition}
+
+\begin{remark}
+  Authors may say that that a diagram commutes rather than say that a diagram is commutative. These are equivalent wordings of the same thing.
+\end{remark}
+
+Let $f:\mathbb{Z}\to\mathbb{Z}$ be defined by $xf=x-1$, $g:\mathbb{Z}\to\mathbb{Z}$ be defined by $xg=x+1$, and $h:\mathbb{Z}\to\mathbb{Z}$ by defined by $xh=x$. Using these functions, we can create a commutative diagram, since $fg=h$. This commutative diagram can be seen in Figure \ref{fig:com-diag-id}.
+
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \centering
+    \begin{pgfonlayer}{nodelayer}
+      \node [style=dot] (0) at (-12.5, 5.5) {$\mathbb{Z}$};
+      \node [style=dot] (1) at (-8.5, 5.5) {$\mathbb{Z}$};
+      \node [style=dot] (2) at (-8.5, 2.5) {$\mathbb{Z}$};
+      \node [style=none] (3) at (-10.5, 6) {$xf=x-1$};
+      \node [style=none] (4) at (-7.2, 4) {$xg=x+1$};
+      \node [style=none] (5) at (-11, 3.5) {$xh=x$};
+    \end{pgfonlayer}
+    \begin{pgfonlayer}{edgelayer}
+      \draw [style=arrow] (0) to (1);
+      \draw [style=arrow] (1) to (2);
+      \draw [style=arrow] (0) to (2);
+    \end{pgfonlayer}
+  \end{tikzpicture}
+  
+  \caption{A commutative diagram.}
+  \label{fig:com-diag-id}
+\end{figure}
+
+The following concepts can be denoted using graph theory (using further edge labellings) but as this will only make the ideas more tedious, we won't. Authors use different styles of arrows on commutative diagrams to signify the type of map of the label. The following is the list of the most common ones.
+
+\begin{itemize}
+\item A $\hookrightarrow$ or $\rightarrowtail$ a denotes an injection;
+\item A $\twoheadrightarrow$ denotes a surjection;
+\item A $\tilde{\rightarrow}$ denotes a bijection;
+\item A $\dashrightarrow$ or a preceding $\exists$ symbol on the label denotes that the mapping exists when the rest of the commutative diagram holds;
+\item A $!$ symbol preceding the label denotes that the map is unique.
+  
+\end{itemize}
+
+A well known example of a diagram containing these styled arrows and labels is the definition of a free group using the universal property.
+
+\begin{definition}[Free group]
+  \label{def:free-group}
+
+  Let $S$ be a set and $F$ a group containing $S$. We say that $S$ is a \textit{free generating set for $F$} if for any group $G$ and any map $\varphi: S \to G$ the following diagram commutes.
+
+  \begin{center}
+    \begin{tikzpicture}
+    
+    \node at (-1,0) (S) {$S$};
+    \node at (-1,-2) (F) {$F$};
+    \node at (1,0) (G) {$G$};
+    \draw[right hook->,thick] (S) -- node[left] {$\iota$} (F);
+    \draw[->,thick] (S) -- node[above] {$\varphi$} (G);
+    \draw[->,thick, dashed] (F) -- node[below right=0.1mm] {$!\bar{\varphi}$} (G);
+  \end{tikzpicture}
+  \end{center}
+
+  where $s\iota=s$ for all $s\in S$ and $\bar\varphi$ is the extension of $\varphi$ to a homomorphism.
+\end{definition}
+
+Reading the commutative diagram in Definition \ref{def:free-group} tells us that if $S$ is a free generating set for $F$ then for any map $\varphi:S \to G$, we can find a unique homomorphism $\bar\varphi$ which extends $\varphi$ such that $\varphi=\iota\bar\varphi$.
+
+
+\section{A brief diversion to Category Theory}
+\label{sec:cat-theory}
+
+Commutative diagrams are used often in the study of categories, which are mathematical objects which are used in almost all areas of mathematics (the free group definition, for example). Instead of maps between two sets, edge-labellings of diagrams in category theory are \textit{morphisms}, which are similar but distinct from maps. If interested, there are plenty of resources on this subject, such as Riehl's textbook \textit{Category Theory in Context}.
+
+
+
+\end{document}
