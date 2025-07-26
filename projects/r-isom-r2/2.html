@@ -1,0 +1,264 @@
+<!DOCTYPE html> 
+<html lang='en-US' xml:lang='en-US'> 
+<head><title>Is (ℝ, +) group isomorphic to (ℝ2, +)?</title> 
+<meta charset='utf-8' /> 
+
+<script src="../script.js" defer></script>
+<link rel="stylesheet" href="../../styles.css">
+
+<meta content='TeX4ht (https://tug.org/tex4ht/)' name='generator' /> 
+<meta content='width=device-width,initial-scale=1' name='viewport' /> 
+<link href='2.css' rel='stylesheet' type='text/css' /> 
+<meta content='2.tex' name='src' /> 
+</head><body>
+   <div class="sidebar"></div>
+
+
+      <p>For a better reading experience, consider viewing the 
+   <a href="2.pdf">PDF</a>.</p>
+
+   <div class='maketitle'>
+
+
+
+<h2 class='titleHead'>Is (ℝ, +) group isomorphic to (ℝ2, +)?</h2>
+ <div class='author'><span class='cmr-12x-x-120'>Ifan Howells-Baines</span></div><br />
+<div class='date'><span class='cmr-12x-x-120'>June 2024</span></div>
+   </div>
+   <h3 class='likesectionHead' id='introduction'><a id='x1-1000'></a>Introduction</h3>
+<p><a id='x1-1000doc'></a>
+</p><!-- l. 21 --><p class='noindent'>In this short document we will show how (<span class='msbm-10x-x-120'>ℝ</span><span class='cmmi-12'>, </span>+) and (<span class='msbm-10x-x-120'>ℝ</span><sup><span class='cmr-8'>2</span></sup><span class='cmmi-12'>, </span>+) are isomorphic as groups.
+While researching this problem I found that not many places online have the proof in a
+rigorous enough way for my liking. Here we will give the proof in its entirety. The only
+prerequesites are elementary ideas on linear algebra, cardinality, and cardinal
+multiplication.
+</p><!-- l. 23 --><p class='noindent'>
+</p>
+   <h3 class='likesectionHead' id='the-proof'><a id='x1-2000'></a>The Proof</h3>
+<p><a id='x1-2000doc'></a>
+   </p><div class='newtheorem'>
+<!-- l. 26 --><p class='noindent'><span class='head'>
+<span class='cmbx-12'>Theorem.</span>  </span><span class='cmti-12'>As additive groups, </span><span class='msbm-10x-x-120'>ℝ </span><span class='cmti-12'>and </span><span class='msbm-10x-x-120'>ℝ</span><sup><span class='cmr-8'>2</span></sup> <span class='cmti-12'>are isomorphic.</span>
+</p>
+   </div>
+
+<!-- l. 28 --><p class='indent'>
+</p><!-- l. 30 --><p class='noindent'>To prove this, we will show that <span class='msbm-10x-x-120'>ℝ </span>and <span class='msbm-10x-x-120'>ℝ</span><sup><span class='cmr-8'>2</span></sup> are isomorphic as <span class='msbm-10x-x-120'>ℚ</span>-vector spaces, which must
+mean that they’re isomorphic as additive groups. We need two preliminary results to
+continue.
+</p>
+   <div class='newtheorem'>
+<!-- l. 35 --><p class='noindent'><span class='head'>
+<a id='x1-2001r1'></a>
+<span class='cmbx-12'>Lemma 1 </span>(Schrödinger-Bernstein)<span class='cmbx-12'>.</span>  </span> <span class='cmti-12'>Let </span><span class='cmmi-12'>A </span><span class='cmti-12'>and </span><span class='cmmi-12'>B </span><span class='cmti-12'>be sets. If there exists injective
+functions </span><span class='cmmi-12'>f </span>: <span class='cmmi-12'>A </span><span class='cmsy-10x-x-120'>→ </span><span class='cmmi-12'>B </span><span class='cmti-12'>and </span><span class='cmmi-12'>g </span>: <span class='cmmi-12'>B </span><span class='cmsy-10x-x-120'>→ </span><span class='cmmi-12'>A</span><span class='cmti-12'>, then there exists a bijective function </span><span class='cmmi-12'>h </span>: <span class='cmmi-12'>A </span><span class='cmsy-10x-x-120'>→ </span><span class='cmmi-12'>B</span><span class='cmti-12'>.</span>
+</p>
+   </div>
+<!-- l. 40 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 43 --><p class='indent'>   <span class='head'>
+<span class='cmti-12'>Proof.</span> </span>First, construct sequences <span class='cmsy-10x-x-120'>{</span><span class='cmmi-12'>A</span><sub><span class='cmmi-8'>n</span></sub><span class='cmsy-10x-x-120'>}</span><sub><span class='cmmi-8'>n</span><span class='cmsy-8'>∈</span><span class='msbm-10x-x-80'>ℕ</span></sub>  and <span class='cmsy-10x-x-120'>{</span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>n</span></sub><span class='cmsy-10x-x-120'>}</span><sub><span class='cmmi-8'>n</span><span class='cmsy-8'>∈</span><span class='msbm-10x-x-80'>ℕ</span></sub>  such that <span class='cmmi-12'>A</span><sub><span class='cmr-8'>0</span></sub> = <span class='cmmi-12'>A</span>, <span class='cmmi-12'>B</span><sub><span class='cmr-8'>0</span></sub> = <span class='cmmi-12'>B</span>,
+and for <span class='cmmi-12'>n &gt; </span>0, <span class='cmmi-12'>B</span><sub><span class='cmmi-8'>n</span><span class='cmr-8'>+1</span></sub> = (<span class='cmmi-12'>A</span><sub><span class='cmmi-8'>n</span></sub>)<span class='cmmi-12'>f </span>and <span class='cmmi-12'>A</span><sub><span class='cmmi-8'>n</span><span class='cmr-8'>+1</span></sub> = <span class='cmmi-12'>A </span><span class='cmsy-10x-x-120'>∖ </span>(<span class='cmmi-12'>B </span><span class='cmsy-10x-x-120'>∖ </span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>n</span><span class='cmr-8'>+1</span></sub>)<span class='cmmi-12'>g</span>.
+</p><!-- l. 48 --><p class='indent'>   We will show that for all <span class='cmmi-12'>n </span><span class='cmsy-10x-x-120'>∈ </span><span class='msbm-10x-x-120'>ℕ </span>that <span class='cmmi-12'>B</span><sub><span class='cmmi-8'>n</span><span class='cmr-8'>+1</span></sub> <span class='cmsy-10x-x-120'>⊆ </span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>n</span></sub>. For <span class='cmmi-12'>n </span>= 0, <span class='cmmi-12'>B</span><sub><span class='cmr-8'>1</span></sub> = (<span class='cmmi-12'>A</span>)<span class='cmmi-12'>f </span><span class='cmsy-10x-x-120'>⊆ </span><span class='cmmi-12'>B </span>= <span class='cmmi-12'>B</span><sub><span class='cmr-8'>0</span></sub>.
+Assume  that  this  inclusion  is  true  for  some  <span class='cmmi-12'>n  </span>=  <span class='cmmi-12'>k</span>.  Then  <span class='cmmi-12'>B</span><sub><span class='cmmi-8'>k</span><span class='cmr-8'>+1</span></sub>   =  (<span class='cmmi-12'>A</span><sub><span class='cmmi-8'>k</span></sub>)<span class='cmmi-12'>f  </span>=
+(<span class='cmmi-12'>A</span><span class='cmsy-10x-x-120'>∖ </span>(<span class='cmmi-12'>B </span><span class='cmsy-10x-x-120'>∖</span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>k</span></sub>)<span class='cmmi-12'>g</span>)<span class='cmmi-12'>f</span>. By hypothesis, <span class='cmmi-12'>B</span><sub><span class='cmmi-8'>k</span><span class='cmr-8'>+1</span></sub> <span class='cmsy-10x-x-120'>⊆ </span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>k</span></sub>, so (<span class='cmmi-12'>B </span><span class='cmsy-10x-x-120'>∖</span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>k</span><span class='cmr-8'>+1</span></sub>)<span class='cmmi-12'>g </span><span class='cmsy-10x-x-120'>⊇ </span>(<span class='cmmi-12'>B </span><span class='cmsy-10x-x-120'>∖</span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>k</span></sub>)<span class='cmmi-12'>g </span><span class='cmsy-10x-x-120'>⇒ </span><span class='cmmi-12'>A</span><sub><span class='cmmi-8'>k</span><span class='cmr-8'>+1</span></sub> =
+<span class='cmmi-12'>A </span><span class='cmsy-10x-x-120'>∖ </span>(<span class='cmmi-12'>B </span><span class='cmsy-10x-x-120'>∖ </span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>k</span><span class='cmr-8'>+1</span></sub>)<span class='cmmi-12'>g </span><span class='cmsy-10x-x-120'>⊆ </span><span class='cmmi-12'>A </span><span class='cmsy-10x-x-120'>∖ </span>(<span class='cmmi-12'>B </span><span class='cmsy-10x-x-120'>∖ </span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>k</span></sub>)<span class='cmmi-12'>g </span>= <span class='cmmi-12'>A</span><sub><span class='cmmi-8'>k</span></sub> <span class='cmsy-10x-x-120'>⇒ </span>(<span class='cmmi-12'>A</span><sub><span class='cmmi-8'>k</span><span class='cmr-8'>+1</span></sub>)<span class='cmmi-12'>f </span><span class='cmsy-10x-x-120'>⊆ </span>(<span class='cmmi-12'>A</span><sub><span class='cmmi-8'>k</span></sub>)<span class='cmmi-12'>f </span><span class='cmsy-10x-x-120'>⇒ </span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>k</span><span class='cmr-8'>+2</span></sub>  <span class='cmsy-10x-x-120'>⊆ </span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>k</span><span class='cmr-8'>+1</span></sub>. By
+induction, <span class='cmsy-10x-x-120'>{</span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>n</span></sub><span class='cmsy-10x-x-120'>}</span>
+</p><!-- l. 61 --><p class='indent'>   Let <span class='cmmi-12'>Ā</span> = <span class='cmex-10x-x-120'>⋂</span>
+  <sub><span class='cmmi-8'>n</span><span class='cmsy-8'>∈</span><span class='msbm-10x-x-80'>ℕ</span></sub><span class='cmmi-12'>A</span><sub><span class='cmmi-8'>n</span></sub> and <span class='bar-css'><span class='cmmi-12'>B</span></span> = <span class='cmex-10x-x-120'>⋂</span>
+  <sub><span class='cmmi-8'>n</span><span class='cmsy-8'>∈</span><span class='msbm-10x-x-80'>ℕ</span></sub><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>n</span></sub>. We will show that <span class='cmmi-12'>f</span><span class='cmsy-10x-x-120'>|</span><sub><span class='cmmi-8'>Ā</span></sub> is a bijection between
+<span class='cmmi-12'>Ā</span> and <span class='bar-css'><span class='cmmi-12'>B</span></span> and that <span class='cmmi-12'>g</span><span class='cmsy-10x-x-120'>|</span>
+</p><!-- l. 69 --><p class='indent'>   Let <span class='cmmi-12'>a </span><span class='cmsy-10x-x-120'>∈</span><span class='cmmi-12'>Ā</span>. This means for all <span class='cmmi-12'>n </span><span class='cmsy-10x-x-120'>∈ </span><span class='msbm-10x-x-120'>ℕ</span>, <span class='cmmi-12'>a </span><span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>A</span><sub><span class='cmmi-8'>n</span></sub> and hence (<span class='cmmi-12'>a</span>)<span class='cmmi-12'>f </span><span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>n</span><span class='cmr-8'>+1</span></sub> <span class='cmsy-10x-x-120'>⇒ </span>(<span class='cmmi-12'>a</span>)<span class='cmmi-12'>f </span><span class='cmsy-10x-x-120'>∈</span><span class='bar-css'><span class='cmmi-12'>B</span></span>.
+Since <span class='cmmi-12'>a </span><span class='cmsy-10x-x-120'>∈</span><span class='cmmi-12'>Ā</span> was arbitrary, we’ve shown that (<span class='cmmi-12'>Ā</span>)<span class='cmmi-12'>f </span><span class='cmsy-10x-x-120'>⊆</span><span class='bar-css'><span class='cmmi-12'>B</span></span>. Conversely, let <span class='cmmi-12'>b </span><span class='cmsy-10x-x-120'>∈</span><span class='bar-css'><span class='cmmi-12'>B</span></span>. For all
+<span class='cmmi-12'>n </span><span class='cmsy-10x-x-120'>∈ </span><span class='msbm-10x-x-120'>ℕ</span>, <span class='cmmi-12'>b </span><span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>n</span></sub> which means for each <span class='cmmi-12'>n </span>there exists an <span class='cmmi-12'>a</span><sub><span class='cmmi-8'>n</span></sub> <span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>A</span><sub><span class='cmmi-8'>n</span></sub> such that (<span class='cmmi-12'>a</span><sub><span class='cmmi-8'>n</span></sub>)<span class='cmmi-12'>f </span>= <span class='cmmi-12'>b</span>.
+By injectivity, all of these <span class='cmmi-12'>a</span><sub><span class='cmmi-8'>n</span></sub>’s are equal. Since <span class='cmmi-12'>b </span>was arbitrary, we’ve shown that for
+any <span class='cmmi-12'>b </span><span class='cmsy-10x-x-120'>∈</span><span class='bar-css'><span class='cmmi-12'>B</span></span> there exists an <span class='cmmi-12'>a </span><span class='cmsy-10x-x-120'>∈</span><span class='cmmi-12'>Ā</span> such that (<span class='cmmi-12'>a</span>)<span class='cmmi-12'>f </span>= <span class='cmmi-12'>b </span>and therefore <span class='bar-css'><span class='cmmi-12'>B</span></span> <span class='cmsy-10x-x-120'>⊆ </span>(<span class='cmmi-12'>Ā</span>)<span class='cmmi-12'>f</span>.
+</p><!-- l. 81 --><p class='indent'>   Now, let <span class='cmmi-12'>b </span><span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>B </span><span class='cmsy-10x-x-120'>∖</span><span class='bar-css'><span class='cmmi-12'>B</span></span>. This means there exists a <span class='cmmi-12'>n </span><span class='cmsy-10x-x-120'>∈ </span><span class='msbm-10x-x-120'>ℕ </span>such that <span class='cmmi-12'>b</span><img alt='∕∈' class='notin' src='20x.png' /><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>n</span><span class='cmr-8'>+1</span></sub>, so
+as <span class='cmmi-12'>A</span><sub><span class='cmmi-8'>n</span><span class='cmr-8'>+1</span></sub>  = <span class='cmmi-12'>A </span><span class='cmsy-10x-x-120'>∖ </span>(<span class='cmmi-12'>B </span><span class='cmsy-10x-x-120'>∖ </span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>n</span><span class='cmr-8'>+1</span></sub>)<span class='cmmi-12'>g</span>, (<span class='cmmi-12'>b</span>)<span class='cmmi-12'>g</span><img alt='∕∈' class='notin' src='21x.png' /><span class='cmmi-12'>A</span><sub><span class='cmmi-8'>n</span><span class='cmr-8'>+1</span></sub>, and so (<span class='cmmi-12'>b</span>)<span class='cmmi-12'>g </span><span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>A </span><span class='cmsy-10x-x-120'>∖</span><span class='cmmi-12'>Ā</span>. As <span class='cmmi-12'>b </span>was arbitrary,
+(<span class='cmmi-12'>B </span><span class='cmsy-10x-x-120'>∖</span><span class='bar-css'><span class='cmmi-12'>B</span></span>)<span class='cmmi-12'>g </span><span class='cmsy-10x-x-120'>⊆ </span><span class='cmmi-12'>A </span><span class='cmsy-10x-x-120'>∖</span><span class='cmmi-12'>Ā</span>. Conversely, let <span class='cmmi-12'>a </span><span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>A </span><span class='cmsy-10x-x-120'>∖</span><span class='cmmi-12'>Ā</span>. This means there exists a <span class='cmmi-12'>n </span><span class='cmsy-10x-x-120'>∈ </span><span class='msbm-10x-x-120'>ℕ </span>such
+
+that <span class='cmmi-12'>a</span><img alt='∕∈' class='notin' src='22x.png' /><span class='cmmi-12'>A</span><sub><span class='cmmi-8'>n</span><span class='cmr-8'>+1</span></sub>, so <span class='cmmi-12'>a </span><span class='cmsy-10x-x-120'>∈ </span>(<span class='cmmi-12'>B </span><span class='cmsy-10x-x-120'>∖ </span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>n</span><span class='cmr-8'>+1</span></sub>)<span class='cmmi-12'>g</span>, and hence there exists a <span class='cmmi-12'>b </span><span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>B </span><span class='cmsy-10x-x-120'>∖ </span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>n</span><span class='cmr-8'>+1</span></sub> such that
+(<span class='cmmi-12'>b</span>)<span class='cmmi-12'>g </span>= <span class='cmmi-12'>a </span>which will be unique as <span class='cmmi-12'>g </span>is injective. We’ve shown that for any <span class='cmmi-12'>a </span><span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>A </span><span class='cmsy-10x-x-120'>∖</span><span class='cmmi-12'>Ā</span>
+there exists a <span class='cmmi-12'>b </span><span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>B </span><span class='cmsy-10x-x-120'>∖</span><span class='bar-css'><span class='cmmi-12'>B</span></span> such that (<span class='cmmi-12'>b</span>)<span class='cmmi-12'>g </span>= <span class='cmmi-12'>a</span>, therefore <span class='cmmi-12'>A </span><span class='cmsy-10x-x-120'>∖</span><span class='cmmi-12'>Ā </span><span class='cmsy-10x-x-120'>⊆ </span>(<span class='cmmi-12'>B </span><span class='cmsy-10x-x-120'>∖</span><span class='bar-css'><span class='cmmi-12'>B</span></span>)<span class='cmmi-12'>g</span>.
+</p><!-- l. 96 --><p class='indent'>   Now the function <span class='cmmi-12'>h </span>: <span class='cmmi-12'>A </span><span class='cmsy-10x-x-120'>→ </span><span class='cmmi-12'>B </span>defined by
+</p>
+   <div class='math-display'>
+<img alt='       {                ¯
+(a)h =   (a)f    if a ∈ A,
+         (a)g−1  if a ∈ A ∖A¯.
+' class='math-display' src='23x.png' /></div>
+<!-- l. 101 --><p class='indent'>   is a bijection.                                                                                      □
+</p>
+   </div>
+   <div class='newtheorem'>
+<!-- l. 104 --><p class='noindent'><span class='head'>
+<a id='x1-2002r2'></a>
+<span class='cmbx-12'>Lemma 2.</span>  </span> <span class='cmti-12'>Let </span><span class='cmmi-12'>X </span><span class='cmti-12'>be an infinite set and let </span><span class='cmmi-12'>S </span><span class='cmti-12'>be the set of all finite subsets of </span><span class='cmmi-12'>X</span><span class='cmti-12'>.
+Then </span><span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>X</span><span class='cmsy-10x-x-120'>| </span>= <span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>S</span><span class='cmsy-10x-x-120'>|</span><span class='cmti-12'>.</span>
+</p>
+   </div>
+<!-- l. 108 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 111 --><p class='indent'>   <span class='head'>
+<span class='cmti-12'>Proof.</span> </span>First, <span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>X</span><span class='cmsy-10x-x-120'>| </span>= <span class='cmsy-10x-x-120'>|{{</span><span class='cmmi-12'>x</span><span class='cmsy-10x-x-120'>}|</span><span class='cmmi-12'>x </span><span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>X</span><span class='cmsy-10x-x-120'>}|≤|</span><span class='cmmi-12'>S</span><span class='cmsy-10x-x-120'>| </span>since singletons are finite subsets of <span class='cmmi-12'>X</span>. Let
+<span class='cmmi-12'>S</span><sub><span class='cmmi-8'>n</span></sub> = <span class='cmsy-10x-x-120'>{</span><span class='cmmi-12'>s </span><span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>S</span><span class='cmsy-10x-x-120'>||</span><span class='cmmi-12'>s</span><span class='cmsy-10x-x-120'>| </span>= <span class='cmmi-12'>n</span><span class='cmsy-10x-x-120'>}</span>. Thinking of ordered pairs, we know that <span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>X</span><span class='cmsy-10x-x-120'>|</span><sup><span class='cmmi-8'>n</span></sup> = <span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>X</span><span class='cmsy-10x-x-120'>|</span>, and since any
+element in <span class='cmmi-12'>S</span><sub><span class='cmmi-8'>n</span></sub> can be ordered <span class='cmmi-12'>n</span>! different ways to create an ordered pair of length <span class='cmmi-12'>n</span>, we
+
+get <span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>S</span><sub><span class='cmmi-8'>n</span></sub><span class='cmsy-10x-x-120'>|≤ </span><span class='cmmi-12'>n</span>!<span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>X</span><span class='cmsy-10x-x-120'>|</span><sup><span class='cmmi-8'>n</span></sup>. So
+</p><table class='align'>
+                <tr><td class='align-odd'><span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>X</span><span class='cmsy-10x-x-120'>|≤|</span><span class='cmmi-12'>S</span><span class='cmsy-10x-x-120'>| </span>=</td>                <td class='align-even'> <span class='cmex-10x-x-120'>∑</span>
+   <sub><span class='cmmi-8'>n</span><span class='cmsy-8'>∈</span><span class='msbm-10x-x-80'>ℕ</span></sub><span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>S</span><sub><span class='cmmi-8'>n</span></sub><span class='cmsy-10x-x-120'>|</span></td>                                                           <td class='align-label'><a id='x1-2003r1'></a>(1)
+                </td></tr><tr><td class='align-odd'> <span class='cmsy-10x-x-120'>≤</span></td>                         <td class='align-even'><span class='cmex-10x-x-120'>∑</span>
+   <sub><span class='cmmi-8'>n</span><span class='cmsy-8'>∈</span><span class='msbm-10x-x-80'>ℕ</span></sub><span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>X</span><span class='cmsy-10x-x-120'>|</span></td>                                                           <td class='align-label'><a id='x1-2004r2'></a>(2)
+                </td></tr><tr><td class='align-odd'> =</td>                         <td class='align-even'><span class='cmsy-10x-x-120'>|</span><span class='msbm-10x-x-120'>ℕ</span><span class='cmsy-10x-x-120'>||</span><span class='cmmi-12'>X</span><span class='cmsy-10x-x-120'>| </span>= <span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>X</span><span class='cmsy-10x-x-120'>|</span> (cardinal multiplication)<span class='cmmi-12'>.</span></td>                                <td class='align-label'><a id='x1-2005r3'></a>(3)                </td></tr></table>
+<!-- l. 117 --><p class='indent'>   Therefore <span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>X</span><span class='cmsy-10x-x-120'>| </span>= <span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>S</span><span class='cmsy-10x-x-120'>|</span>.                                                                             □
+</p>
+   </div>
+<!-- l. 120 --><p class='indent'>   The next result will give us a direction to pursue for the rest of the proof.
+</p>
+   <div class='newtheorem'>
+<!-- l. 122 --><p class='noindent'><span class='head'>
+<a id='x1-2006r3'></a>
+<span class='cmbx-12'>Lemma 3.</span>  </span> <span class='cmti-12'>Let </span><span class='cmmi-12'>V  </span><span class='cmti-12'>and </span><span class='cmmi-12'>W </span><span class='cmti-12'>be </span><span class='cmmi-12'>F</span><span class='cmti-12'>-vector spaces for some field </span><span class='cmmi-12'>F</span><span class='cmti-12'>. If dim</span><span class='cmmi-12'>V </span>= <span class='cmti-12'>dim</span><span class='cmmi-12'>W</span><span class='cmti-12'>,
+then </span>(<span class='cmmi-12'>V, </span>+)<img alt='∼
+=' class='cong' src='24x.png' />(<span class='cmmi-12'>W, </span>+)<span class='cmti-12'>.</span>
+</p>
+   </div>
+<!-- l. 126 --><p class='indent'>
+</p>
+   <div class='proof'>
+
+<!-- l. 129 --><p class='indent'>   <span class='head'>
+<span class='cmti-12'>Proof.</span> </span>Let <span class='cmmi-12'>B</span><sub><span class='cmmi-8'>V</span> </sub> = <span class='cmsy-10x-x-120'>{</span><span class='cmmi-12'>e</span><sub><span class='cmmi-8'>i</span></sub><span class='cmsy-10x-x-120'>}</span><sub><span class='cmmi-8'>i</span><span class='cmsy-8'>∈</span><span class='cmmi-8'>I</span></sub> and <span class='cmmi-12'>B</span><sub><span class='cmmi-8'>W</span> </sub> = <span class='cmsy-10x-x-120'>{</span><span class='cmmi-12'>f</span><sub><span class='cmmi-8'>j</span></sub><span class='cmsy-10x-x-120'>}</span><sub><span class='cmmi-8'>j</span><span class='cmsy-8'>∈</span><span class='cmmi-8'>J</span></sub> be bases for <span class='cmmi-12'>V </span>and <span class='cmmi-12'>W </span>respectively for
+some index sets <span class='cmmi-12'>I </span>and <span class='cmmi-12'>J</span>. Since dim<span class='cmmi-12'>V </span>= dim<span class='cmmi-12'>W</span>, there exists a bijection <span class='cmmi-12'>φ </span>: <span class='cmmi-12'>B</span><sub><span class='cmmi-8'>V</span> </sub> <span class='cmsy-10x-x-120'>→ </span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>W</span> </sub>.
+We can extend <span class='cmmi-12'>φ </span>to <span class='bar-css'><span class='cmmi-12'>φ</span></span> : <span class='cmmi-12'>V </span><span class='cmsy-10x-x-120'>→ </span><span class='cmmi-12'>W </span>like so: given <span class='cmmi-12'>v </span>= <span class='cmex-10x-x-120'>∑</span>
+  <sub><span class='cmmi-8'>i</span><span class='cmsy-8'>∈</span><span class='cmmi-8'>I</span></sub><span class='cmmi-12'>a</span><sub><span class='cmmi-8'>i</span></sub><span class='cmmi-12'>e</span><sub><span class='cmmi-8'>i</span></sub> (<span class='cmmi-12'>a</span><sub><span class='cmmi-8'>i</span></sub> <span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>F</span>), we map this
+to <span class='cmmi-12'>v</span><span class='bar-css'><span class='cmmi-12'>φ</span></span> = <span class='cmex-10x-x-120'>∑</span>
+  <sub><span class='cmmi-8'>i</span><span class='cmsy-8'>∈</span><span class='cmmi-8'>I</span></sub><span class='cmmi-12'>a</span><sub><span class='cmmi-8'>i</span></sub>(<span class='cmmi-12'>e</span><sub><span class='cmmi-8'>i</span></sub>)<span class='cmmi-12'>φ</span>. We will show that this function is a linear isomorphism.
+</p><!-- l. 138 --><p class='indent'>   First, let <span class='cmmi-12'>w </span>= <span class='cmex-10x-x-120'>∑</span>
+  <sub><span class='cmmi-8'>j</span><span class='cmsy-8'>∈</span><span class='cmmi-8'>J</span></sub><span class='cmmi-12'>a</span><sub><span class='cmmi-8'>j</span></sub><span class='cmmi-12'>f</span><sub><span class='cmmi-8'>j</span></sub> <span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>W</span>, then the vector <span class='cmex-10x-x-120'>∑</span>
+  <sub><span class='cmmi-8'>j</span><span class='cmsy-8'>∈</span><span class='cmmi-8'>J</span></sub><span class='cmmi-12'>a</span><sub><span class='cmmi-8'>j</span></sub>(<span class='cmmi-12'>f</span><sub><span class='cmmi-8'>j</span></sub>)<span class='cmmi-12'>φ</span><sup><span class='cmsy-8'>−</span><span class='cmr-8'>1</span></sup> <span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>V </span>maps to <span class='cmmi-12'>w</span>.
+So <span class='bar-css'><span class='cmmi-12'>φ</span></span> is a surjection.
+</p><!-- l. 142 --><p class='indent'>   Next, suppose <span class='cmmi-12'>v</span><sub><span class='cmr-8'>1</span></sub><span class='cmmi-12'>,v</span><sub><span class='cmr-8'>2</span></sub> <span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>V </span>with <span class='cmmi-12'>v</span><sub><span class='cmr-8'>1</span></sub> = <span class='cmex-10x-x-120'>∑</span>
+  <sub><span class='cmmi-8'>i</span><span class='cmsy-8'>∈</span><span class='cmmi-8'>I</span></sub><span class='cmmi-12'>a</span><sub><span class='cmmi-8'>i</span></sub><span class='cmmi-12'>e</span><sub><span class='cmmi-8'>i</span></sub> and <span class='cmmi-12'>v</span><sub><span class='cmr-8'>2</span></sub> = <span class='cmex-10x-x-120'>∑</span>
+  <sub><span class='cmmi-8'>i</span><span class='cmsy-8'>∈</span><span class='cmmi-8'>I</span></sub><span class='cmmi-12'>b</span><sub><span class='cmmi-8'>i</span></sub><span class='cmmi-12'>e</span><sub><span class='cmmi-8'>i</span></sub>. If <span class='cmmi-12'>v</span><sub><span class='cmr-8'>1</span></sub><span class='bar-css'><span class='cmmi-12'>φ</span></span> = <span class='cmmi-12'>v</span><sub><span class='cmr-8'>2</span></sub><span class='bar-css'><span class='cmmi-12'>φ</span></span>,
+then <span class='cmex-10x-x-120'>∑</span>
+  <sub><span class='cmmi-8'>i</span><span class='cmsy-8'>∈</span><span class='cmmi-8'>I</span></sub>(<span class='cmmi-12'>a</span><sub><span class='cmmi-8'>i</span></sub> <span class='cmsy-10x-x-120'>− </span><span class='cmmi-12'>b</span><sub><span class='cmmi-8'>i</span></sub>)(<span class='cmmi-12'>e</span><sub><span class='cmmi-8'>i</span></sub>)<span class='cmmi-12'>φ </span>= 0 and hence, since <span class='cmmi-12'>B</span><sub><span class='cmmi-8'>V</span> </sub> is linearly independent, <span class='cmmi-12'>a</span><sub><span class='cmmi-8'>i</span></sub> = <span class='cmmi-12'>b</span><sub><span class='cmmi-8'>i</span></sub> for
+all <span class='cmmi-12'>i </span><span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>I</span>. This proves that <span class='bar-css'><span class='cmmi-12'>φ</span></span> is injective. We’ve shown that <span class='bar-css'><span class='cmmi-12'>φ</span></span> is a bijection, and since
+it’s linear by construction, is a linear isomorphism. Therefore (<span class='cmmi-12'>V, </span>+)<img alt='∼=' class='cong' src='25x.png' />(<span class='cmmi-12'>W, </span>+).      □
+</p>
+   </div>
+<!-- l. 152 --><p class='indent'>   So, to show that (<span class='msbm-10x-x-120'>ℝ</span><span class='cmmi-12'>, </span>+) and (<span class='msbm-10x-x-120'>ℝ</span><sup><span class='cmr-8'>2</span></sup><span class='cmmi-12'>, </span>+) are isomorphic we need to show that
+dim<span class='msbm-10x-x-120'>ℝ </span>= dim<span class='msbm-10x-x-120'>ℝ</span><sup><span class='cmr-8'>2</span></sup> with respect to some field. This next result hints that we should use a field
+that will make <span class='msbm-10x-x-120'>ℝ </span>and <span class='msbm-10x-x-120'>ℝ</span><sup><span class='cmr-8'>2</span></sup> infinite dimensional.
+</p>
+   <div class='newtheorem'>
+<!-- l. 158 --><p class='noindent'><span class='head'>
+<a id='x1-2007r4'></a>
+<span class='cmbx-12'>Lemma 4.</span>  </span> <span class='cmti-12'>If </span><span class='cmmi-12'>V  </span><span class='cmti-12'>is an infinite dimensional </span><span class='cmmi-12'>F</span><span class='cmti-12'>-vector space for some field </span><span class='cmmi-12'>F </span><span class='cmti-12'>with
+basis </span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>V</span> </sub> = <span class='cmsy-10x-x-120'>{</span><span class='cmmi-12'>e</span><sub><span class='cmmi-8'>i</span></sub><span class='cmsy-10x-x-120'>}</span><sub><span class='cmmi-8'>i</span><span class='cmsy-8'>∈</span><span class='cmmi-8'>I</span></sub><span class='cmti-12'>, then </span><span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>V </span><span class='cmsy-10x-x-120'>| </span>= <span class='cmti-12'>max</span>(<span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>V</span> </sub><span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>,</span><span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>F</span><span class='cmsy-10x-x-120'>|</span>)<span class='cmti-12'>.</span>
+</p>
+   </div>
+<!-- l. 162 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 164 --><p class='indent'>   <span class='head'>
+<span class='cmti-12'>Proof.</span> </span>Let <span class='cmmi-12'>v </span>= <span class='cmex-10x-x-120'>∑</span>
+  <sub><span class='cmmi-8'>i</span><span class='cmsy-8'>∈</span><span class='cmmi-8'>I</span></sub><span class='cmmi-12'>a</span><sub><span class='cmmi-8'>i</span></sub><span class='cmmi-12'>e</span><sub><span class='cmmi-8'>i</span></sub> <span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>V </span>and define <span class='cmmi-12'>δ</span><sub><span class='cmmi-8'>v</span></sub> : <span class='cmmi-12'>B</span><sub><span class='cmmi-8'>v</span></sub> <span class='cmsy-10x-x-120'>→ </span><span class='cmmi-12'>F </span>by <span class='cmmi-12'>e</span><sub><span class='cmmi-8'>i</span></sub><span class='cmmi-12'>δ</span><sub><span class='cmmi-8'>v</span></sub> = <span class='cmmi-12'>a</span><sub><span class='cmmi-8'>i</span></sub>. Let Δ be the set
+of all possible functions from <span class='cmmi-12'>B</span><sub><span class='cmmi-8'>V</span> </sub> to <span class='cmmi-12'>F </span>where only finitely many images of elements
+
+of <span class='cmmi-12'>B</span><sub><span class='cmmi-8'>V</span> </sub> are nonzero. Let <span class='cmmi-12'>σ</span><sub><span class='cmr-8'>1</span></sub> : <span class='cmmi-12'>V </span><span class='cmsy-10x-x-120'>→ </span>Δ be defined by <span class='cmmi-12'>vσ</span><sub><span class='cmr-8'>1</span></sub> = <span class='cmmi-12'>δ</span><sub><span class='cmmi-8'>v</span></sub>. This is an injection since
+every element of a vector space can be represented uniquely as a linear combination
+of its basis. Let <span class='cmmi-12'>σ</span><sub><span class='cmr-8'>2</span></sub> : Δ <span class='cmsy-10x-x-120'>→ </span><span class='cmmi-12'>V </span>be defined by <span class='cmmi-12'>πσ</span><sub><span class='cmr-8'>2</span></sub> = <span class='cmex-10x-x-120'>∑</span>
+  <sub><span class='cmmi-8'>e</span><span class='cmsy-8'>∈</span><span class='cmmi-8'>B</span><sub><span class='cmmi-6'>V</span> </sub></sub><span class='cmmi-12'>e</span>(<span class='cmmi-12'>eπ</span>), which is an injection
+for the same reason. By Lemma <a href='#x1-2001r1'>1<!-- tex4ht:ref: lem:schr-bern  --></a>, <span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>V </span><span class='cmsy-10x-x-120'>| </span>= <span class='cmsy-10x-x-120'>|</span>Δ<span class='cmsy-10x-x-120'>|</span>.
+</p><!-- l. 174 --><p class='indent'>   We now want to count the number of functions in Δ. We can represent a function
+<span class='cmmi-12'>δ </span><span class='cmsy-10x-x-120'>∈ </span>Δ by a finite subset <span class='cmmi-12'>H </span>of <span class='cmmi-12'>B</span><sub><span class='cmmi-8'>V</span> </sub> <span class='cmsy-10x-x-120'>× </span><span class='cmmi-12'>F</span>: (<span class='cmmi-12'>v,a</span>) <span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>H </span>if and only if <span class='cmmi-12'>vδ </span>= <span class='cmmi-12'>a </span><span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>F </span><span class='cmsy-10x-x-120'>∖{</span>0<span class='cmsy-10x-x-120'>}</span>.
+Using  this,  we  can  get  the  cardinality  of  Δ.  First,  Δ  has  cardinality  at  least
+<span class='cmsy-10x-x-120'>|{{</span>(<span class='cmmi-12'>v,a</span>)<span class='cmsy-10x-x-120'>}|</span><span class='cmmi-12'>v </span><span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>V</span> </sub><span class='cmmi-12'>,a </span><span class='cmsy-10x-x-120'>∈ </span><span class='cmmi-12'>F</span><span class='cmsy-10x-x-120'>}| </span>= <span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>V</span> </sub> <span class='cmsy-10x-x-120'>× </span><span class='cmmi-12'>F</span><span class='cmsy-10x-x-120'>|</span>, since each singleton <span class='cmsy-10x-x-120'>{</span>(<span class='cmmi-12'>v,a</span>)<span class='cmsy-10x-x-120'>} </span>corresponds to
+the vector <span class='cmmi-12'>av</span>. If <span class='cmmi-12'>S </span>is the set of all finite subsets of <span class='cmmi-12'>B</span><sub><span class='cmmi-8'>V</span> </sub> <span class='cmsy-10x-x-120'>× </span><span class='cmmi-12'>F</span>, then using Lemma <a href='#x1-2002r2'>2<!-- tex4ht:ref: lem:fin-sub  --></a>
+we get that <span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>V</span> </sub> <span class='cmsy-10x-x-120'>× </span><span class='cmmi-12'>F</span><span class='cmsy-10x-x-120'>| </span>= <span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>S</span><span class='cmsy-10x-x-120'>|</span>. However, we’ve shown that every function in Δ can be
+represented by a finite subset of <span class='cmmi-12'>B</span><sub><span class='cmmi-8'>V</span> </sub> <span class='cmsy-10x-x-120'>× </span><span class='cmmi-12'>F</span>. Hence
+</p>
+   <div class='math-display'>
+<img alt='|Δ | ≤ |S | = |BV × F | ≤ |Δ |
+' class='math-display' src='26x.png' /></div>
+<!-- l. 185 --><p class='indent'>   and therefore <span class='cmsy-10x-x-120'>|</span>Δ<span class='cmsy-10x-x-120'>| </span>= <span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>V</span> </sub> <span class='cmsy-10x-x-120'>× </span><span class='cmmi-12'>F</span><span class='cmsy-10x-x-120'>| </span>= <span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>V</span> </sub><span class='cmsy-10x-x-120'>||</span><span class='cmmi-12'>F</span><span class='cmsy-10x-x-120'>| </span>= max(<span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>B</span><sub><span class='cmmi-8'>V</span> </sub><span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>,</span><span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>F</span><span class='cmsy-10x-x-120'>|</span>) by the definition of
+cardinal multiplication.
+                                                                                 □
+</p>
+   </div>
+<!-- l. 190 --><p class='indent'>   This tells us that we want to find a field <span class='cmmi-12'>F </span>such that <span class='msbm-10x-x-120'>ℝ </span>and <span class='msbm-10x-x-120'>ℝ</span><sup><span class='cmr-8'>2</span></sup> as <span class='cmmi-12'>F</span>-vector spaces have
+bases which have a larger cardinality than <span class='cmmi-12'>F</span>. We’ll then use Lemma <a href='#x1-2001r1'>1<!-- tex4ht:ref: lem:schr-bern  --></a> to show that that
+they have equal cardinality, and hence by the above, dimension. The following result tells
+us what choice for <span class='cmmi-12'>F </span>we should make.
+</p>
+   <div class='newtheorem'>
+<!-- l. 192 --><p class='noindent'><span class='head'>
+<a id='x1-2008r5'></a>
+<span class='cmbx-12'>Lemma 5.</span>  </span> <span class='cmti-12'>Let </span><span class='cmmi-12'>V </span><span class='cmti-12'>be a finite dimensional </span><span class='msbm-10x-x-120'>ℚ</span><span class='cmti-12'>-vector. Then </span><span class='cmmi-12'>V </span><span class='cmti-12'>is countable.</span>
+
+</p>
+   </div>
+<!-- l. 195 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 198 --><p class='indent'>   <span class='head'>
+<span class='cmti-12'>Proof.</span> </span>Any vector in <span class='cmmi-12'>V </span>can be represented uniquely by an ordered pair from <span class='msbm-10x-x-120'>ℚ</span><sup>dim<span class='cmmi-8'>V</span> </sup>.
+Since the Cartesian product of countable sets is countable, <span class='cmmi-12'>V </span>must be countable.   □
+</p>
+   </div>
+<!-- l. 201 --><p class='indent'>   In particular, what the above lemma tells us is that <span class='msbm-10x-x-120'>ℝ </span>and <span class='msbm-10x-x-120'>ℝ</span><sup><span class='cmr-8'>2</span></sup> over <span class='msbm-10x-x-120'>ℚ </span>are infinite
+dimensional. We only need one more result to complete the puzzle.
+</p>
+   <div class='newtheorem'>
+<!-- l. 203 --><p class='noindent'><span class='head'>
+<a id='x1-2009r6'></a>
+<span class='cmbx-12'>Lemma 6.</span>  </span> <span class='cmsy-10x-x-120'>|</span><span class='msbm-10x-x-120'>ℝ</span><span class='cmsy-10x-x-120'>| </span>= <span class='cmsy-10x-x-120'>|</span><span class='msbm-10x-x-120'>ℝ</span><sup><span class='cmr-8'>2</span></sup><span class='cmsy-10x-x-120'>|</span><span class='cmti-12'>.</span>
+</p>
+   </div>
+<!-- l. 206 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 209 --><p class='indent'>   <span class='head'>
+<span class='cmti-12'>Proof.</span> </span>We will do this using Lemma <a href='#x1-2001r1'>1<!-- tex4ht:ref: lem:schr-bern  --></a>. First, note that the result is equivalent to
+showing there exists a bijection <span class='cmmi-12'>h </span>: (0<span class='cmmi-12'>, </span>1) <span class='cmsy-10x-x-120'>→ </span>(0<span class='cmmi-12'>, </span>1)<sup><span class='cmr-8'>2</span></sup>  since <span class='cmmi-12'>h</span><span class='cmsy-10x-x-120'>′ </span>: (0<span class='cmmi-12'>, </span>1) <span class='cmsy-10x-x-120'>→ </span><span class='msbm-10x-x-120'>ℝ </span>defined by
+<span class='cmmi-12'>xh</span><span class='cmsy-10x-x-120'>′ </span>= tan <span class='cmmi-12'>π</span>(<span class='cmmi-12'>x </span><span class='cmsy-10x-x-120'>−</span><img align='middle' alt='1
+2' class='frac' src='27x.png' />) is a bijection. Let <span class='cmmi-12'>f </span>: (0<span class='cmmi-12'>, </span>1) <span class='cmsy-10x-x-120'>→ </span>(0<span class='cmmi-12'>, </span>1)<sup><span class='cmr-8'>2</span></sup> be defined by <span class='cmmi-12'>xf </span>= (<span class='cmmi-12'>x,x</span>).
+This is an injection. For the reverse injection, the story is a bit more intricate.
+</p><!-- l. 211 --><p class='indent'>   If (0<span class='cmmi-12'>.a</span><sub><span class='cmr-8'>1</span></sub><span class='cmmi-12'>a</span><sub><span class='cmr-8'>2</span></sub><span class='cmmi-12'>a</span><sub><span class='cmr-8'>3</span></sub><span class='cmmi-12'>…, </span>0<span class='cmmi-12'>.b</span><sub><span class='cmr-8'>1</span></sub><span class='cmmi-12'>b</span><sub><span class='cmr-8'>2</span></sub><span class='cmmi-12'>b</span><sub><span class='cmr-8'>3</span></sub><span class='cmmi-12'>…</span>) <span class='cmsy-10x-x-120'>∈ </span>(0<span class='cmmi-12'>, </span>1)<sup><span class='cmr-8'>2</span></sup>, then a natural choice for its image in (0<span class='cmmi-12'>, </span>1)
+would be 0<span class='cmmi-12'>.a</span><sub><span class='cmr-8'>1</span></sub><span class='cmmi-12'>b</span><sub><span class='cmr-8'>1</span></sub><span class='cmmi-12'>a</span><sub><span class='cmr-8'>2</span></sub><span class='cmmi-12'>b</span><sub><span class='cmr-8'>2</span></sub><span class='cmmi-12'>a</span><sub><span class='cmr-8'>3</span></sub><span class='cmmi-12'>b</span><sub><span class='cmr-8'>3</span></sub><span class='cmmi-12'>…</span>, but binary representation of numbers are not unique; take
+for example 0<span class='cmmi-12'>.</span>5 and 0<span class='cmmi-12'>.</span>4999<span class='cmmi-12'>…</span>. However, since we are looking to construct an injection
+
+and not a bijection, we can get around this problem. Let <span class='cmmi-12'>g </span>: (0<span class='cmmi-12'>, </span>1)<sup><span class='cmr-8'>2</span></sup>  <span class='cmsy-10x-x-120'>→ </span>(0<span class='cmmi-12'>, </span>1) be
+defined by (0<span class='cmmi-12'>.a</span><sub><span class='cmr-8'>1</span></sub><span class='cmmi-12'>a</span><sub><span class='cmr-8'>2</span></sub><span class='cmmi-12'>a</span><sub><span class='cmr-8'>3</span></sub><span class='cmmi-12'>…, </span>0<span class='cmmi-12'>.b</span><sub><span class='cmr-8'>1</span></sub><span class='cmmi-12'>b</span><sub><span class='cmr-8'>2</span></sub><span class='cmmi-12'>b</span><sub><span class='cmr-8'>3</span></sub><span class='cmmi-12'>…</span>)<span class='cmmi-12'>g </span>= 0<span class='cmmi-12'>.a</span><sub><span class='cmr-8'>1</span></sub><span class='cmmi-12'>b</span><sub><span class='cmr-8'>1</span></sub><span class='cmmi-12'>a</span><sub><span class='cmr-8'>2</span></sub><span class='cmmi-12'>b</span><sub><span class='cmr-8'>2</span></sub><span class='cmmi-12'>a</span><sub><span class='cmr-8'>3</span></sub><span class='cmmi-12'>b</span><sub><span class='cmr-8'>3</span></sub><span class='cmmi-12'>…</span>, and if a number has more than
+one binary representation, pick one arbitrarily to use. This is an injection.
+</p><!-- l. 213 --><p class='indent'>   Hence by Lemma <a href='#x1-2001r1'>1<!-- tex4ht:ref: lem:schr-bern  --></a>, there is a bijection between (0<span class='cmmi-12'>, </span>1) and (0<span class='cmmi-12'>, </span>1)<sup><span class='cmr-8'>2</span></sup>  and therefore
+a bijection between <span class='msbm-10x-x-120'>ℝ </span>and <span class='msbm-10x-x-120'>ℝ</span><sup><span class='cmr-8'>2</span></sup>.                                                                     □
+</p>
+   </div>
+<!-- l. 216 --><p class='indent'>   We now have everything we need to prove our objective. All we need to do is put the
+pieces together.
+</p>
+   <div class='newtheorem'>
+<!-- l. 218 --><p class='noindent'><span class='head'>
+<span class='cmbx-12'>Theorem.</span>  </span><span class='cmti-12'>As additive groups, </span><span class='msbm-10x-x-120'>ℝ </span><span class='cmti-12'>and </span><span class='msbm-10x-x-120'>ℝ</span><sup><span class='cmr-8'>2</span></sup> <span class='cmti-12'>are isomorphic.</span>
+</p>
+   </div>
+<!-- l. 220 --><p class='indent'>
+</p>
+   <div class='proof'>
+<!-- l. 223 --><p class='indent'>   <span class='head'>
+<span class='cmti-12'>Proof.</span> </span>Let <span class='cmmi-12'>B</span><sub><span class='msbm-10x-x-80'>ℝ</span></sub> and <span class='cmmi-12'>B</span><sub><span class='msbm-10x-x-80'>ℝ</span><sup><span class='cmr-6'>2</span></sup></sub> be bases for <span class='msbm-10x-x-120'>ℝ </span>and <span class='msbm-10x-x-120'>ℝ</span><sup><span class='cmr-8'>2</span></sup> over <span class='msbm-10x-x-120'>ℚ</span>, respectively. By Lemma <a href='#x1-2008r5'>5<!-- tex4ht:ref: lem:vs-q-count  --></a>, we
+know that <span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>B</span><sub><span class='msbm-10x-x-80'>ℝ</span></sub><span class='cmsy-10x-x-120'>| </span>and <span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>B</span><sub><span class='msbm-10x-x-80'>ℝ</span><sup><span class='cmr-6'>2</span></sup></sub><span class='cmsy-10x-x-120'>| </span>are infinite. Since <span class='cmsy-10x-x-120'>|</span><span class='msbm-10x-x-120'>ℚ</span><span class='cmsy-10x-x-120'>| </span>= <span class='cmsy-10x-x-120'>|</span><span class='msbm-10x-x-120'>ℕ</span><span class='cmsy-10x-x-120'>|</span>, the smallest cardinal, we know
+that <span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>B</span><sub><span class='msbm-10x-x-80'>ℝ</span></sub><span class='cmsy-10x-x-120'>|≥|</span><span class='msbm-10x-x-120'>ℚ</span><span class='cmsy-10x-x-120'>| </span>and <span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>B</span><sub><span class='msbm-10x-x-80'>ℝ</span><sup><span class='cmr-6'>2</span></sup></sub><span class='cmsy-10x-x-120'>|≥|</span><span class='msbm-10x-x-120'>ℚ</span><span class='cmsy-10x-x-120'>|</span>. Hence by Lemma <a href='#x1-2007r4'>4<!-- tex4ht:ref: lem:dim-inf-dim  --></a>, <span class='cmsy-10x-x-120'>|</span><span class='msbm-10x-x-120'>ℝ</span><span class='cmsy-10x-x-120'>| </span>= max(<span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>B</span><sub><span class='msbm-10x-x-80'>ℝ</span></sub><span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>,</span><span class='cmsy-10x-x-120'>|</span><span class='msbm-10x-x-120'>ℚ</span><span class='cmsy-10x-x-120'>|</span>) = <span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>B</span><sub><span class='msbm-10x-x-80'>ℝ</span></sub><span class='cmsy-10x-x-120'>|</span>,
+and similarily, <span class='cmsy-10x-x-120'>|</span><span class='msbm-10x-x-120'>ℝ</span><sup><span class='cmr-8'>2</span></sup><span class='cmsy-10x-x-120'>| </span>= <span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>B</span><sub>
+<span class='msbm-10x-x-80'>ℝ</span><sup><span class='cmr-6'>2</span></sup></sub><span class='cmsy-10x-x-120'>|</span>. Using Lemma <a href='#x1-2009r6'>6<!-- tex4ht:ref: lem:r-r2-card  --></a>, <span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>B</span><sub><span class='msbm-10x-x-80'>ℝ</span></sub><span class='cmsy-10x-x-120'>| </span>= <span class='cmsy-10x-x-120'>|</span><span class='cmmi-12'>B</span><sub><span class='msbm-10x-x-80'>ℝ</span><sup><span class='cmr-6'>2</span></sup></sub><span class='cmsy-10x-x-120'>|</span>, and finally by Lemma <a href='#x1-2006r3'>3<!-- tex4ht:ref: lem:add-cong-vs  --></a>,
+(<span class='msbm-10x-x-120'>ℝ</span><span class='cmmi-12'>, </span>+)<img alt='∼=' class='cong' src='28x.png' />(<span class='msbm-10x-x-120'>ℝ</span><sup><span class='cmr-8'>2</span></sup><span class='cmmi-12'>, </span>+).                                                                                      □
+</p>
+   </div>
+    
+</body> 
+</html>

@@ -1,0 +1,225 @@
+\documentclass[12pt]{article}
+
+\usepackage{geometry}[a4, portrait, margin=2.5cm]
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+
+\newtheorem*{theorem}{Theorem}
+\newtheorem{lemma}{Lemma}
+
+\title{Is $(\mathbb{R},+)$ group isomorphic to $(\mathbb{R}^2,+)$?}
+\author{Ifan Howells-Baines}
+\date{June 2024}
+
+\begin{document}
+\maketitle
+
+\section*{Introduction}
+\label{sec:intro}
+
+In this short document we will show how $(\mathbb{R},+)$ and $(\mathbb{R}^2,+)$ are isomorphic as groups. While researching this problem I found that not many places online have the proof in a rigorous enough way for my liking. Here we will give the proof in its entirety. The only prerequesites are elementary ideas on linear algebra, cardinality, and cardinal multiplication.
+
+\section*{The Proof}
+\label{sec:the-proof}
+
+\begin{theorem}
+  As additive groups, $\mathbb{R}$ and $\mathbb{R}^2$ are isomorphic.
+\end{theorem}
+
+To prove this, we will show that $\mathbb{R}$ and $\mathbb{R}^2$ are
+isomorphic as $\mathbb{Q}$-vector spaces, which must mean that they're
+isomorphic as additive groups. We need two preliminary results to
+continue.
+
+\begin{lemma}[Schr\"{o}dinger-Bernstein]
+  \label{lem:schr-bern}
+  Let $A$ and $B$ be sets. If there exists injective functions
+  $f:A \to B$ and $g:B \to A$, then there exists a bijective function
+  $h: A \to B$.
+\end{lemma}
+
+\begin{proof}
+  First, construct sequences $\{A_n\}_{n \in \mathbb{N}}$ and
+  $\{B_n\}_{n \in \mathbb{N}}$ such that $A_0 = A$, $B_0 = B$, and for
+  $n > 0$, $B_{n+1}=(A_n)f$ and
+  $A_{n+1} = A \setminus (B\setminus B_{n+1})g$.
+  
+  We will show that for all $n\in \mathbb{N}$ that
+  $B_{n+1}\subseteq B_n$. For $n=0$, $B_1=(A)f\subseteq B=B_0$. Assume
+  that this inclusion is true for some $n=k$. Then
+  $B_{k+1}=(A_k)f = (A\setminus (B\setminus B_k)g)f$. By hypothesis,
+  $B_{k+1}\subseteq B_{k}$, so
+  $(B\setminus B_{k+1})g \supseteq (B\setminus B_{k})g \Rightarrow
+  A_{k+1} = A\setminus (B\setminus B_{k+1})g \subseteq A\setminus
+  (B\setminus B_{k})g = A_{k} \Rightarrow (A_{k+1})f \subseteq
+  (A_{k})f \Rightarrow B_{k+2} \subseteq B_{k+1}$. By induction,
+  $\{B_n\}_{n\in \mathbb{N}$ is a decreasing sequence. A similar
+    argument can be made to show that $\{A_n\}_{n\in \mathbb{N}$ is
+      a decreasing sequence.
+
+      Let $\bar{A}=\bigcap_{n\in \mathbb{N}}A_n$ and
+      $\bar{B}=\bigcap_{n\in \mathbb{N}}B_n$. We will show that
+      $f|_{\bar{A}}$ is a bijection between $\bar{A}$ and $\bar{B}$
+      and that $g|_{B\setminus \bar{B}$ is a bijection between
+        $B\setminus\bar{B}$ and $A\setminus\bar{A}$. Since both of
+        these functions inherit injectivity from their unrestricted
+        versions, surjectivity is the only condition to prove.
+
+        Let $a\in\bar{A}$. This means for all $n\in\mathbb{N}$,
+        $a\in A_n$ and hence
+        $(a)f\in B_{n+1}\Rightarrow (a)f\in \bar{B}$. Since
+        $a\in\bar{A}$ was arbitrary, we've shown that
+        $(\bar{A})f\subseteq\bar{B}$. Conversely, let
+        $b\in\bar{B}$. For all $n\in\mathbb{N}$, $b\in B_n$ which
+        means for each $n$ there exists an $a_n \in A_n$ such that
+        $(a_n)f = b$. By injectivity, all of these $a_n$'s are
+        equal. Since $b$ was arbitrary, we've shown that for any
+        $b\in\bar{B}$ there exists an $a\in\bar{A}$ such that $(a)f=b$
+        and therefore $\bar{B}\subseteq (\bar{A})f$.
+
+        Now, let $b\in B\setminus\bar{B}$. This means there exists a
+        $n\in\mathbb{N}$ such that $b \notin B_{n+1}$, so as
+        $A_{n+1}=A\setminus (B\setminus B_{n+1})g$,
+        $(b)g\notin A_{n+1}$, and so $(b)g\in A\setminus\bar{A}$. As
+        $b$ was arbitrary,
+        $(B\setminus\bar{B})g \subseteq
+        A\setminus\bar{A}$. Conversely, let $a\in
+        A\setminus\bar{A}$. This means there exists a $n\in\mathbb{N}$
+        such that $a\notin A_{n+1}$, so $a\in (B\setminus B_{n+1})g$,
+        and hence there exists a $b\in B\setminus B_{n+1}$ such that
+        $(b)g=a$ which will be unique as $g$ is injective. We've shown
+        that for any $a\in A\setminus\bar{A}$ there exists a
+        $b\in B\setminus\bar{B}$ such that $(b)g=a$, therefore
+        $A\setminus\bar{A}\subseteq (B\setminus\bar{B})g$.
+
+        Now the function $h:A\to B$ defined by $$(a)h=
+        \begin{cases}
+          (a)f& \text{if $a\in\bar{A}$},\\
+          (a)g^{-1}& \text{if $a\in A\setminus\bar{A}$}.
+        \end{cases}$$
+        is a bijection.
+      \end{proof}
+
+      \begin{lemma}
+        \label{lem:fin-sub}
+        Let $X$ be an infinite set and let $S$ be the set of all finite
+        subsets of $X$. Then $|X|=|S|$.
+      \end{lemma}
+
+      \begin{proof}
+        First, $|X|=|\{\{x\}|x\in X\}|\leq |S|$ since singletons are finite subsets of $X$. Let $S_n = \{s\in S | |s|=n\}$. Thinking of ordered pairs, we know that $|X|^n=|X|$, and since any element in $S_n$ can be ordered $n!$ different ways to create an ordered pair of length $n$, we get $|S_n|\leq n!|X|^n$. So
+        \begin{align}
+          |X| \leq |S| =& \sum_{n\in\mathbb{N}}|S_n|\\
+          \leq& \sum_{n\in\mathbb{N}}|X|\\
+          =& |\mathbb{N}||X|=|X| \text{    (cardinal multiplication)}.
+        \end{align}
+        Therefore $|X|=|S|$.
+      \end{proof}
+
+      The next result will give us a direction to pursue for the rest of the proof.
+
+      \begin{lemma}
+        \label{lem:add-cong-vs}
+  Let $V$ and $W$ be $F$-vector spaces for some field $F$. If
+  $\text{dim}V=\text{dim}W$, then $(V,+)\cong (W,+)$.
+\end{lemma}
+
+\begin{proof}
+  Let $B_V=\{e_i\}_{i\in I}$ and $B_W=\{f_j\}_{j\in J}$ be bases for
+  $V$ and $W$ respectively for some index sets $I$ and $J$. Since
+  $\text{dim}V=\text{dim}W$, there exists a bijection
+  $\varphi:B_V\to B_W$. We can extend $\varphi$ to
+  $\bar{\varphi}:V\to W$ like so: given $v=\sum_{i\in I}a_ie_i$
+  ($a_i\in F$), we map this to
+  $v\bar{\varphi}=\sum_{i\in I}a_i(e_i)\varphi$. We will show that
+  this function is a linear isomorphism.
+  
+  First, let $w=\sum_{j\in J}a_jf_j\in W$, then the vector
+    $\sum_{j\in J}a_j(f_j)\varphi^{-1}\in V$ maps to $w$. So $\bar\varphi$
+    is a surjection.
+
+    Next, suppose $v_1,v_2\in V$ with $v_1=\sum_{i\in I}a_ie_i$ and
+    $v_2=\sum_{i\in I}b_ie_i$. If
+    $v_1\bar\varphi = v_2\bar\varphi$, then
+    $\sum_{i\in I}(a_i-b_i)(e_i)\varphi=0$ and hence, since $B_V$ is
+    linearly independent, $a_i=b_i$ for all $i\in I$. This proves that
+    $\bar\varphi$ is injective. We've shown that $\bar\varphi$ is a
+    bijection, and since it's linear by construction, is a
+    linear isomorphism. Therefore $(V,+)\cong (W,+)$.
+  \end{proof}
+
+  So, to show that $(\mathbb{R},+)$ and $(\mathbb{R}^2,+)$ are
+  isomorphic we need to show that
+  $\text{dim}\mathbb{R}=\text{dim}\mathbb{R}^2$ with respect to some
+  field. This next result hints that we should use a field that will
+  make $\mathbb{R}$ and $\mathbb{R}^2$ infinite dimensional.
+
+  \begin{lemma}
+    \label{lem:dim-inf-dim}
+    If $V$ is an infinite dimensional $F$-vector space for some field $F$
+    with basis $B_V=\{e_i\}_{i \in I}$, then $|V|=\text{max}(|B_V|,|F|)$.
+  \end{lemma}
+  \begin{proof}
+    Let $v=\sum_{i\in I}a_ie_i\in V$ and define $\delta_v:B_v\to F$ by
+    $e_i\delta_v=a_i$. Let $\Delta$ be the set of all possible
+    functions from $B_V$ to $F$ where only finitely many images of
+    elements of $B_V$ are nonzero. Let $\sigma_1:V\to \Delta$ be
+    defined by $v\sigma_1=\delta_v$. This is an injection since every
+    element of a vector space can be represented uniquely as a linear
+    combination of its basis. Let $\sigma_2:\Delta\to V$ be defined by
+    $\pi\sigma_2=\sum_{e\in B_V}e(e\pi)$, which is an injection for
+    the same reason. By Lemma \ref{lem:schr-bern}, $|V|=|\Delta|$.
+
+    We now want to count the number of functions in $\Delta$. We can
+    represent a function $\delta\in\Delta$ by a finite subset $H$ of
+    $B_V\times F$: $(v,a)\in H$ if and only if
+    $v\delta =a \in F\setminus \{0\}$. Using this, we can get the
+    cardinality of $\Delta$. First, $\Delta$ has cardinality at least
+    $|\{\{(v,a)\} | v\in B_V, a \in F\}|=|B_V\times F|$, since each
+    singleton $\{(v,a)\}$ corresponds to the vector $av$. If $S$ is
+    the set of all finite subsets of $B_V\times F$, then using
+    Lemma \ref{lem:fin-sub} we get that $|B_V\times F| = |S|$. However,
+    we've shown that every function in $\Delta$ can be represented by
+    a finite subset of $B_V\times F$. Hence
+    $$|\Delta| \leq |S| = |B_V\times F| \leq |\Delta|$$ and
+    therefore $|\Delta| = |B_V\times F|=|B_V||F|=\text{max}(|B_V|,|F|)$ by the definition of cardinal multiplication.
+
+  \end{proof}
+
+  This tells us that we want to find a field $F$ such that $\mathbb{R}$ and $\mathbb{R}^2$ as $F$-vector spaces have bases which have a larger cardinality than $F$. We'll then use Lemma \ref{lem:schr-bern} to show that that they have equal cardinality, and hence by the above, dimension. The following result tells us what choice for $F$ we should make.
+
+  \begin{lemma}
+    \label{lem:vs-q-count}
+    Let $V$ be a finite dimensional $\mathbb{Q}$-vector. Then $V$ is countable.
+  \end{lemma}
+  
+  \begin{proof}
+    Any vector in $V$ can be represented uniquely by an ordered pair from $\mathbb{Q}^{\text{dim}V}$. Since the Cartesian product of countable sets is countable, $V$ must be countable.
+  \end{proof}
+
+  In particular, what the above lemma tells us is that $\mathbb{R}$ and $\mathbb{R}^2$ over $\mathbb{Q}$ are infinite dimensional. We only need one more result to complete the puzzle.
+
+  \begin{lemma}
+    \label{lem:r-r2-card}
+    $|\mathbb{R}|=|\mathbb{R}^2|$.
+  \end{lemma}
+
+  \begin{proof}
+    We will do this using Lemma \ref{lem:schr-bern}. First, note that the result is equivalent to showing there exists a bijection $h:(0,1)\to (0,1)^2$ since $h':(0,1)\to\mathbb{R}$ defined by $xh'=\tan{\pi(x-\frac{1}{2})}$ is a bijection. Let $f:(0,1)\to (0,1)^2$ be defined by $xf=(x,x)$. This is an injection. For the reverse injection, the story is a bit more intricate.
+    
+    If $(0.a_1a_2a_3\ldots,0.b_1b_2b_3\ldots)\in (0,1)^2$, then a natural choice for its image in $(0,1)$ would be $0.a_1b_1a_2b_2a_3b_3\ldots$, but binary representation of numbers are not unique; take for example $0.5$ and $0.4999\ldots$. However, since we are looking to construct an injection and not a bijection, we can get around this problem. Let $g:(0,1)^2\to (0,1)$ be defined by $(0.a_1a_2a_3\ldots,0.b_1b_2b_3\ldots)g = 0.a_1b_1a_2b_2a_3b_3\ldots$, and if a number has more than one binary representation, pick one arbitrarily to use. This is an injection.
+
+    Hence by Lemma \ref{lem:schr-bern}, there is a bijection between $(0,1)$ and $(0,1)^2$ and therefore a bijection between $\mathbb{R}$ and $\mathbb{R}^2$.
+  \end{proof}
+
+  We now have everything we need to prove our objective. All we need to do is put the pieces together.
+
+  \begin{theorem}
+    As additive groups, $\mathbb{R}$ and $\mathbb{R}^2$ are isomorphic.
+  \end{theorem}
+
+  \begin{proof}
+    Let $B_{\mathbb{R}}$ and $B_{\mathbb{R}^2}$ be bases for $\mathbb{R}$ and $\mathbb{R}^2$ over $\mathbb{Q}$, respectively. By Lemma \ref{lem:vs-q-count}, we know that $|B_{\mathbb{R}}|$ and $|B_{\mathbb{R}^2}|$ are infinite. Since $|\mathbb{Q}|=|\mathbb{N}|$, the smallest cardinal, we know that $|B_{\mathbb{R}}| \geq |\mathbb{Q}|$ and $|B_{\mathbb{R}^2}| \geq |\mathbb{Q}|$. Hence by Lemma \ref{lem:dim-inf-dim}, $|\mathbb{R}|=\text{max}(|B_{\mathbb{R}}|, |\mathbb{Q}|)=|B_{\mathbb{R}}|$, and similarily, $|\mathbb{R}^2|=|B_{\mathbb{R}^2}|$. Using Lemma \ref{lem:r-r2-card}, $|B_{\mathbb{R}}|=|B_{\mathbb{R}^2}|$, and finally by Lemma \ref{lem:add-cong-vs}, $(\mathbb{R},+)\cong (\mathbb{R}^2,+)$.
+  \end{proof}
+\end{document}
